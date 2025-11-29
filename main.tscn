@@ -22,7 +22,7 @@ position = Vector2(64, 320)
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("3_272bh")
 cell_size = Vector2(128, 128)
-grid_size = Vector2(5, 5)
+grid_size = Vector2(30, 30)
 
 [node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
 script = ExtResource("4_5vw27")
@@ -31,7 +31,7 @@ grid_manager = NodePath("../GridManager")
 [node name="BeaconManager" type="Node2D" parent="." node_paths=PackedStringArray("grid")]
 script = ExtResource("5_kek77")
 grid = NodePath("../GridManager")
-beacon_limit = 135
+beacon_limit = 5
 
 [node name="Player" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("6_7mycd")]
 position = Vector2(448, 192)
