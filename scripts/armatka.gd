@@ -77,39 +77,3 @@ func shoot_at_enemy(body: Node) -> void:
 
 	shooting = false
 	
-	
-	
-	
-	#var ammo_type := Ammo_store.choose_ammo_for_enemy(enemy.enemy_type, enemy.enemy_mod)
-	#
-	#if ammo_type == -1:
-		#print("Brak odpowiedniej amunicji na tego robaka!")
-		#return
-#
-	## próbujemy zużyć 1 sztukę ammo
-	#if not Ammo_store.try_consume(ammo_type, 1):
-		#print("Wybrana amunicja się skończyła (race condition)")
-		#return
-#
-	#print("Strzelam ammo:", ammo_type, " pozostało:", Ammo_store.get_amount(ammo_type))
-	#
-#
-	#while current_enemy != null and is_instance_valid(current_enemy):
-		## zadaj obrażenia:
-		##if not current_enemy.has_method("health"):
-			##print("bezpieczenstwo")
-			##break  # dla bezpieczeństwa
-#
-		#current_enemy.health -= damage
-		#print("fire, dmg:", damage, " enemy hp:", current_enemy.health)
-#
-		#if current_enemy.health <= 0:
-			#current_enemy.queue_free()
-			#current_enemy = null
-			#break
-#
-		## czekamy na timer (cooldown między strzałami)
-		#timer.start()
-		#await timer.timeout
-#
-	#shooting = false

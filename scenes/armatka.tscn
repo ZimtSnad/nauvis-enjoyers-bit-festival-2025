@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://drd5fao185k1h" path="res://assets/sprites/dzialo.png" id="2_xxn75"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxn75"]
-radius = 23.0
-height = 168.0
+radius = 18.0
+height = 220.0
 
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_hls62")
