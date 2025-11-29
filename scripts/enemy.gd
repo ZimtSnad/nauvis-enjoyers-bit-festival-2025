@@ -1,10 +1,14 @@
 extends Node2D
 
-@export var delay_between_bite := 2.0
-@export var damage := 10
-@export var health := 100
-@export var speed := 10.0
-@export var attack_range := 30.0
+@export var enemy_type: Enemy_types.Type = Enemy_types.Type.LIGHT
+@export var enemy_mod: Enemy_modifiers.Mod = Enemy_modifiers.Mod.NONE
+
+var health: int
+var damage: int
+var speed: float
+var delay_between_bite: float
+var attack_range: float
+
 @export var turret_path: NodePath 
 
 @onready var timer: Timer = $Timer
@@ -14,6 +18,24 @@ var attacking: bool = false
 
 
 func _ready() -> void:
+	var base = Enemy_types.BASE_DATA[enemy_type]
+	var mod = Enemy_modifiers.MOD_DATA[enemy_mod]
+
+	health = int(base["health"] * mod["health_mult"])
+	damage = int(base["damage"] * mod["damage_mult"])
+	speed = base["speed"] * mod["speed_mult"]
+
+	delay_between_bite = base["delay_between_bite"] * mod["delay_mult"]
+	attack_range = base["attack_range"] * mod["range_mult"]
+
+	print("=== Enemy config ===")
+	print("Type:", enemy_type, " Mod:", enemy_mod)
+	print("HP:", health)
+	print("DMG:", damage)
+	print("SPD:", speed)
+	print("DELAY:", delay_between_bite)
+	print("RANGE:", attack_range)
+	
 	timer.one_shot = true
 	timer.wait_time = delay_between_bite
 	add_to_group("enemies")
@@ -23,19 +45,15 @@ func _physics_process(delta: float) -> void:
 	if turret == null or !is_instance_valid(turret):
 		return
 
-	# jeśli już atakuje – nie ruszamy go
 	if attacking:
 		return
 
-	# dystans do turreta
 	var dist := global_position.distance_to(turret.global_position)
 
 	if dist > attack_range:
-		# idź w stronę turreta
 		var dir := (turret.global_position - global_position).normalized()
 		global_position += dir * speed * delta
 	else:
-		# jesteśmy wystarczająco blisko – zaczynamy atak
 		attack_turret()
 
 
@@ -58,7 +76,6 @@ func attack_turret() -> void:
 			# turret.queue_free()
 			break
 
-		# czekamy między ugryzieniami
 		timer.start()
 		await timer.timeout
 
