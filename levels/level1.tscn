@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0fqnnbhs6nil"]
+
+[ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_v8kj3"]
+[ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="2_crycw"]
+[ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="3_i2041"]
+[ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="4_xy4tn"]
+[ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="5_usj0q"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource("3_i2041")
+cell_size = Vector2(128, 128)
+grid_size = Vector2(5, 5)
+
+[node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
+script = ExtResource("4_xy4tn")
+grid_manager = NodePath("../GridManager")
+
+[node name="BeaconManager" type="Node2D" parent="." node_paths=PackedStringArray("grid")]
+script = ExtResource("5_usj0q")
+grid = NodePath("../GridManager")
+beacon_limit = 135
+
+[node name="Generator" parent="." instance=ExtResource("1_v8kj3")]
+
+[node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
+position = Vector2(256, 0)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+
+[node name="Generator2" parent="." instance=ExtResource("1_v8kj3")]
+position = Vector2(0, 128)
+
+[node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
+position = Vector2(256, 128)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+
+[node name="2to1crafter3" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
+position = Vector2(256, 256)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")

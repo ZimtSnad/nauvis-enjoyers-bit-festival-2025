@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://nukj5th3ij00"]
+
+[ext_resource type="Script" uid="uid://cmug1fy230k5r" path="res://scripts/armatka.gd" id="1_hls62"]
+[ext_resource type="Texture2D" uid="uid://drd5fao185k1h" path="res://assets/sprites/dzialo.png" id="2_xxn75"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxn75"]
+radius = 23.0
+height = 168.0
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_hls62")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(111, 18)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xxn75")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(111, 18)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xxn75")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("2_xxn75")
+flip_h = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
