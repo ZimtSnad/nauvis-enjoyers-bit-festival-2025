@@ -17,9 +17,9 @@ func _ready() -> void:
 		ammo[t] = 0
 
 	# przykład testowy:
-	ammo[Ammo_types.Type.LIGHT_NONE] = 50
+	ammo[Ammo_types.Type.LIGHT_NONE] = 2
 	ammo[Ammo_types.Type.MEDIUM_FIRE] = 10
-	ammo[Ammo_types.Type.MEDIUM_NONE] = 5
+	ammo[Ammo_types.Type.MEDIUM_NONE] = 3
 	ammo[Ammo_types.Type.HEAVY_FIRE] = 2
 
 
