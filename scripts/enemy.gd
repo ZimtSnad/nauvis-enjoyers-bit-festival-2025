@@ -3,62 +3,59 @@ extends Node2D
 @export var delay_between_bite := 2.0
 @export var damage := 10
 @export var health := 100
-@export var id := 1
-@export var type := 1
-@export var modifier := 1
-@export var speed := 1.0
+@export var speed := 10.0
+@export var attack_range := 30.0
+@export var turret_path: NodePath 
 
-@onready var timer: Timer = $"../Timer"
+@onready var timer: Timer = $Timer
+@onready var turret: Node2D = get_node(turret_path)
 
-var target: Node2D = null
 var attacking: bool = false
 
 
 func _ready() -> void:
 	timer.one_shot = true
 	timer.wait_time = delay_between_bite
-	# opcjonalnie: add_to_group("enemies")
-	# add_to_group("enemies")
+	add_to_group("enemies")
 
 
-func _process(delta: float) -> void:
-	# tu możesz poruszać wroga (np. w stronę targetu)
-	pass
+func _physics_process(delta: float) -> void:
+	if turret == null or !is_instance_valid(turret):
+		return
+
+	# jeśli już atakuje – nie ruszamy go
+	if attacking:
+		return
+
+	# dystans do turreta
+	var dist := global_position.distance_to(turret.global_position)
+
+	if dist > attack_range:
+		# idź w stronę turreta
+		var dir := (turret.global_position - global_position).normalized()
+		global_position += dir * speed * delta
+	else:
+		# jesteśmy wystarczająco blisko – zaczynamy atak
+		attack_turret()
 
 
-# To powinno być podpięte do sygnału z Area2D:
-# Enemy/Area2D.body_entered
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and target == null:
-		target = body
-		attack_loop()
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body == target:
-		target = null
-
-
-func _on_timer_timeout() -> void:
-	# Nie musimy tu nic robić, bo używamy await timer.timeout
-	pass
-
-
-func attack_loop() -> void:
+func attack_turret() -> void:
 	if attacking:
 		return
 	attacking = true
 
-	while target != null and is_instance_valid(target):
-		# zadaj dmg
-		if not target.has_variable("health"):
-			break
+	while turret != null and is_instance_valid(turret):
+		# upewniamy się, że turret ma zdrowie
+		#if not turret.has_variable("health"):
+			#break
 
-		target.health -= damage
-		print("enemy bite, dmg:", damage, " player hp:", target.health)
+		turret.health -= damage
+		print("enemy hits turret, dmg:", damage, " turret hp:", turret.health)
 
-		if target.health <= 0:
-			# gracz padł – przestajemy gryźć
+		if turret.health <= 0:
+			print("turret destroyed")
+			# możesz np.:
+			# turret.queue_free()
 			break
 
 		# czekamy między ugryzieniami

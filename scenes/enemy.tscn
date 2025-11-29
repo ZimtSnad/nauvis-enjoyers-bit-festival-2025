@@ -5,19 +5,19 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 
-[node name="Enemy" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["enemies"]]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_7p1mj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = 1.5707964
-shape = SubResource("CircleShape2D_md0e3")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.10546875, 0.099852085)
+position = Vector2(7.625001, 7.804733)
+scale = Vector2(0.11523439, 0.112426035)
 texture = ExtResource("2_md0e3")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
+position = Vector2(8, 8)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_md0e3")

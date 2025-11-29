@@ -2,28 +2,29 @@ extends Node2D
 
 @export var delay_between_shots := 2.0
 @export var damage := 10
+@export var health := 1000
 
 @onready var timer: Timer = $Timer
 
 var current_enemy: Node2D = null
 var shooting: bool = false
 
-
 func _ready() -> void:
 	timer.one_shot = true
 	timer.wait_time = delay_between_shots
 
-
 func _process(delta: float) -> void:
-	# NIC tu nie robimy z timerem
 	pass
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("body.is_in_group('enemies'): ", body.is_in_group("enemies"))
+	print("current_enemy == null: ", current_enemy == null)
+	print("body: ", body.get_groups())
 	if body.is_in_group("enemies") and current_enemy == null:
+	#if  current_enemy == null:
 		print("enemy in range")
 		current_enemy = body
-		shoot_at_enemy()  # zaczynamy pętlę strzelania
+		shoot_at_enemy()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

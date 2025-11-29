@@ -9,4 +9,5 @@
 position = Vector2(276, 185)
 
 [node name="Enemy" parent="." instance=ExtResource("2_iyx0m")]
-position = Vector2(323, 184)
+position = Vector2(522, 195)
+turret_path = NodePath("../Turret")
