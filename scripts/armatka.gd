@@ -63,3 +63,5 @@ func shoot_at_enemy() -> void:
 		await timer.timeout
 
 	shooting = false
+
+func choose_bullet() -> void:

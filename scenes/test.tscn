@@ -7,6 +7,9 @@
 
 [node name="Turret" parent="." instance=ExtResource("1_bl13t")]
 position = Vector2(276, 185)
+delay_between_shots = null
+damage = null
+health = null
 
 [node name="Enemy" parent="." instance=ExtResource("2_iyx0m")]
 position = Vector2(522, 195)
