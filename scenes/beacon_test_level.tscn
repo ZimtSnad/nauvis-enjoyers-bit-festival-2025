@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://6bqxax7ksi6a"]
+
+[ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="1_paw1w"]
+[ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="2_j6w7d"]
+[ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="3_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://bdvt53byqgyw3" path="res://scenes/beacon.tscn" id="4_x4b8f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource("1_paw1w")
+cell_size = null
+grid_size = null
+
+[node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
+script = ExtResource("2_j6w7d")
+grid_manager = NodePath("../GridManager")
+
+[node name="BeaconManager" type="Node2D" parent="." node_paths=PackedStringArray("grid")]
+script = ExtResource("3_j6w7d")
+grid = NodePath("../GridManager")
+beacon_limit = 135
+beacon_scene = ExtResource("4_x4b8f")
