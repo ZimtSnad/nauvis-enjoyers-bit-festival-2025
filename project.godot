@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="nauvis-enjoyers-bit-festival-2025"
-run/main_scene="uid://6bqxax7ksi6a"
+run/main_scene="uid://nukj5th3ij00"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[display]
+[autoload]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+AmmoStore="*res://scripts/Ammo_store.gd"
+
+[global_group]
+
+enemies="Enemies xd"
 
 [rendering]
 

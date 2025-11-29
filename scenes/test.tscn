@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d26agg6by4nn4"]
+
+[ext_resource type="PackedScene" uid="uid://nukj5th3ij00" path="res://scenes/armatka.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="2_iyx0m"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Turret" parent="." instance=ExtResource("1_bl13t")]
+position = Vector2(276, 185)
+
+[node name="Enemy" parent="." instance=ExtResource("2_iyx0m")]
+position = Vector2(522, 195)
+turret_path = NodePath("../Turret")
