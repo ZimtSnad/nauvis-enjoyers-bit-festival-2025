@@ -40,3 +40,33 @@ const NAMES := {
 	Type.HEAVY_FIRE:  "Heavy Fire",
 	Type.HEAVY_VOID:  "Heavy Void",
 }
+
+
+static func get_type(size: Enemy_types.Type, mod: Enemy_modifiers.Mod) -> Type:
+	match size:
+		Enemy_types.Type.LIGHT:
+			match mod:
+				Enemy_modifiers.Mod.NONE:  return Type.LIGHT_NONE
+				Enemy_modifiers.Mod.ICE:   return Type.LIGHT_ICE
+				Enemy_modifiers.Mod.TOXIC: return Type.LIGHT_TOXIC
+				Enemy_modifiers.Mod.FIRE:  return Type.LIGHT_FIRE
+				Enemy_modifiers.Mod.VOID:  return Type.LIGHT_VOID
+
+		Enemy_types.Type.MEDIUM:
+			match mod:
+				Enemy_modifiers.Mod.NONE:  return Type.MEDIUM_NONE
+				Enemy_modifiers.Mod.ICE:   return Type.MEDIUM_ICE
+				Enemy_modifiers.Mod.TOXIC: return Type.MEDIUM_TOXIC
+				Enemy_modifiers.Mod.FIRE:  return Type.MEDIUM_FIRE
+				Enemy_modifiers.Mod.VOID:  return Type.MEDIUM_VOID
+
+		Enemy_types.Type.HEAVY:
+			match mod:
+				Enemy_modifiers.Mod.NONE:  return Type.HEAVY_NONE
+				Enemy_modifiers.Mod.ICE:   return Type.HEAVY_ICE
+				Enemy_modifiers.Mod.TOXIC: return Type.HEAVY_TOXIC
+				Enemy_modifiers.Mod.FIRE:  return Type.HEAVY_FIRE
+				Enemy_modifiers.Mod.VOID:  return Type.HEAVY_VOID
+
+	# fallback (nie powinno się zdarzyć)
+	return Type.LIGHT_NONE
