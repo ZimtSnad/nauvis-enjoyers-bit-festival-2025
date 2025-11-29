@@ -5,51 +5,49 @@
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="2_rsks8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vklko"]
-size = Vector2(128, 128)
+size = Vector2(120, 120)
 
 [node name="2to1crafter" type="Area2D"]
 script = ExtResource("1_vklko")
 
 [node name="Building sprite" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ce2oh")
 
 [node name="First input" type="Label" parent="."]
-offset_left = -55.0
-offset_top = 34.0
-offset_right = -34.0
-offset_bottom = 46.0
-text = "First"
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 68.0
+offset_bottom = 114.0
+text = "10"
 label_settings = ExtResource("2_rsks8")
 
 [node name="Second input" type="Label" parent="."]
-offset_left = -55.0
-offset_top = 46.0
-offset_right = -29.0
-offset_bottom = 57.0
-text = "second"
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 108.0
+offset_bottom = 114.0
+text = "10"
 label_settings = ExtResource("2_rsks8")
 
 [node name="Output" type="Label" parent="."]
-offset_left = 16.0
-offset_top = 35.0
-offset_right = 48.0
-offset_bottom = 46.0
-text = "output"
+offset_left = 80.0
+offset_top = 96.0
+offset_right = 112.0
+offset_bottom = 107.0
+text = "10"
 label_settings = ExtResource("2_rsks8")
 
 [node name="Resource sprite" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 
-[node name="Output timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_vklko")
 
-[node name="First timer" type="Timer" parent="."]
-
-[node name="Second timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Output timer" to="." method="_on_output_timer_timeout"]
-[connection signal="timeout" from="First timer" to="." method="_on_first_timer_timeout"]
-[connection signal="timeout" from="Second timer" to="." method="_on_second_timer_timeout"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_output_timer_timeout"]
