@@ -9,15 +9,14 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Generator" parent="." instance=ExtResource("1_lquwl")]
-position = Vector2(64, 64)
 
 [node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_7mycd")]
-position = Vector2(256, 64)
+position = Vector2(128, 0)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 
 [node name="Generator2" parent="." instance=ExtResource("1_lquwl")]
-position = Vector2(64, 224)
+position = Vector2(0, 128)
 
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("3_272bh")
