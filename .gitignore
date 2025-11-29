@@ -1,0 +1,50 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.nomedia
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+
+# Mono-specific ignores
+# The .mono folder contains generated files for C# projects.
+# Note: Excluding this means other users will need to build the C# project
+# before running the Godot project for the first time.
+.mono/
+data_*/
+mono_crash.*.json
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Build/Export files
+*.pck
+*.zip
+
+# OS-specific
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+*~
+.nfs
+
+# Common Editor/IDE files
+# Visual Studio, Rider, VS Code, etc.
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.ide*
