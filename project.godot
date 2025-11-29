@@ -15,6 +15,10 @@ run/main_scene="uid://6bqxax7ksi6a"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AmmoStore="*res://scripts/ammo_store.gd"
+
 [global_group]
 
 enemies="Enemies xd"
