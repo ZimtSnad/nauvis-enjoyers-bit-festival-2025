@@ -2,7 +2,8 @@ extends Node2D
 
 @export var delay_between_shots := 1.0
 @export var damage := 10
-@export var health := 1000
+@export var start_health := 1000
+var health := start_health
 @export var bullet_scene: PackedScene
 
 @onready var timer: Timer = $Timer
@@ -12,6 +13,7 @@ extends Node2D
 @onready var Audio_Stream = $AudioStreamPlayer
 @onready var reload = $reload
 @export var beacon_manager: Node2D
+@onready var healtbar = $HSlider
 
 
 var current_enemy: Node2D = null
@@ -21,9 +23,13 @@ var body
 func _ready() -> void:
 	AnimatedSprite.play("idle")
 	timer.wait_time = delay_between_shots
+	
 
 func _process(delta: float) -> void:
 	var beacon_time_multipier = beacon_manager.get_time_modifier_at_world(self.position)
+	
+	healtbar.value = (float(health) / float(start_health))*100.0
+	print(health)
 	if beacon_time_multipier == 0 and not timer.is_stopped():
 		timer.stop()
 	elif beacon_time_multipier != 0 and timer.is_stopped():
