@@ -1,6 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://h63ml1lelyen"]
+[gd_scene load_steps=44 format=3 uid="uid://h63ml1lelyen"]
 
-[ext_resource type="Texture2D" uid="uid://58ld0a2frvv0" path="res://icon.svg" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://udbct8qam28n" path="res://assets/sprites/Boom/Boom1.png" id="1_7v6cf"]
+[ext_resource type="Texture2D" uid="uid://bv3o2ibhs2csg" path="res://assets/sprites/Boom/Boom2.png" id="2_vab5u"]
+[ext_resource type="Texture2D" uid="uid://dk8uwjfnhoyk3" path="res://assets/sprites/Boom/Boom3.png" id="3_qiusc"]
+[ext_resource type="Texture2D" uid="uid://b5i73m7fqtfem" path="res://assets/sprites/Boom/Boom4.png" id="4_5ie7m"]
+[ext_resource type="Texture2D" uid="uid://b4bqoc5s458nu" path="res://assets/sprites/Boom/Boom5.png" id="5_ya47j"]
+[ext_resource type="Texture2D" uid="uid://cady54xml3kgv" path="res://assets/sprites/Boom/Boom6.png" id="6_hyejq"]
+[ext_resource type="Texture2D" uid="uid://dt3g53r7ut6hr" path="res://assets/sprites/Boom/Boom7.png" id="7_j0dkt"]
+[ext_resource type="Texture2D" uid="uid://jjhxwucgsfto" path="res://assets/sprites/Boom/Boom8.png" id="8_sdxul"]
+[ext_resource type="Texture2D" uid="uid://62rnicfqcd7y" path="res://assets/sprites/Enemy/small/Fire/Small_Fire1.png" id="10_sdxul"]
+[ext_resource type="Texture2D" uid="uid://t0vpxj4d3wtu" path="res://assets/sprites/Enemy/small/Fire/Small_Fire2.png" id="11_e7lhw"]
+[ext_resource type="Texture2D" uid="uid://hjm2jbgo5nrx" path="res://assets/sprites/Enemy/small/Fire/Small_Fire3.png" id="12_gst0f"]
+[ext_resource type="Texture2D" uid="uid://cm8yritrryycy" path="res://assets/sprites/Enemy/small/Fire/Small_Fire4.png" id="13_sm4rh"]
+[ext_resource type="Texture2D" uid="uid://vkywo5hooq3c" path="res://assets/sprites/Enemy/small/Ice/Small_Ice1.png" id="14_5lniq"]
+[ext_resource type="Texture2D" uid="uid://b18kfsecb2cbh" path="res://assets/sprites/Enemy/small/Ice/Small_Ice2.png" id="15_7w3jn"]
+[ext_resource type="Texture2D" uid="uid://dewksvwonoxmy" path="res://assets/sprites/Enemy/small/Ice/Small_Ice3.png" id="16_uiwvf"]
+[ext_resource type="Texture2D" uid="uid://dty8gcv86cti2" path="res://assets/sprites/Enemy/small/Ice/Small_Ice4.png" id="17_0pw1s"]
+[ext_resource type="Texture2D" uid="uid://c2x3osu4h6a23" path="res://assets/sprites/Enemy/small/Normal/Small_Normal1.png" id="18_b5geg"]
+[ext_resource type="Texture2D" uid="uid://cq2s4d84m0l2" path="res://assets/sprites/Enemy/small/Normal/Small_Normal2.png" id="19_g0yyi"]
+[ext_resource type="Texture2D" uid="uid://yrbsdikgjfdf" path="res://assets/sprites/Enemy/small/Normal/Small_Normal3.png" id="20_5utat"]
+[ext_resource type="Texture2D" uid="uid://b3bctnao3hwd2" path="res://assets/sprites/Enemy/small/Normal/Small_Normal4.png" id="21_0b4fd"]
+[ext_resource type="Texture2D" uid="uid://v6d1r1espa23" path="res://assets/sprites/Enemy/small/Toxic/Small_Toxic1.png" id="22_13roy"]
+[ext_resource type="Texture2D" uid="uid://d4gaplre8vsst" path="res://assets/sprites/Enemy/small/Toxic/Small_Toxic2.png" id="23_a5akt"]
+[ext_resource type="Texture2D" uid="uid://dppv0oq6yydly" path="res://assets/sprites/Enemy/small/Toxic/Small_Toxic3.png" id="24_4lt7r"]
+[ext_resource type="Texture2D" uid="uid://doty02hb7h1m6" path="res://assets/sprites/Enemy/small/Toxic/Small_Toxic4.png" id="25_tysqt"]
+[ext_resource type="Texture2D" uid="uid://bx77ngg3cmlrj" path="res://assets/sprites/Enemy/small/Void/Small_Void1.png" id="26_kbbx4"]
+[ext_resource type="Texture2D" uid="uid://sv1qfckuv32f" path="res://assets/sprites/Enemy/small/Void/Small_Void2.png" id="27_x24ca"]
+[ext_resource type="Texture2D" uid="uid://dusmufulxwqqn" path="res://assets/sprites/Enemy/small/Void/Small_Void3.png" id="28_3yi8r"]
+[ext_resource type="Texture2D" uid="uid://bm7lxefhgqxow" path="res://assets/sprites/Enemy/small/Void/Small_Void4.png" id="29_yb7ap"]
+[ext_resource type="Texture2D" uid="uid://dks66d6yerr4c" path="res://assets/sprites/Enemy/medium/Fire/MediumFire1.png" id="30_by3os"]
+[ext_resource type="Texture2D" uid="uid://dv0n6ahuinqcr" path="res://assets/sprites/Enemy/medium/Fire/MediumFire2.png" id="31_o6r7o"]
+[ext_resource type="Texture2D" uid="uid://ipy8yb1mvoxi" path="res://assets/sprites/Enemy/medium/Ice/MediumIce1.png" id="32_ef2cb"]
+[ext_resource type="Texture2D" uid="uid://8om7c4ktoywv" path="res://assets/sprites/Enemy/medium/Ice/MediumIce2.png" id="33_1lc1m"]
+[ext_resource type="Texture2D" uid="uid://71ag57ckbwik" path="res://assets/sprites/Enemy/medium/Normal/MediumNormal1.png" id="34_4c6tc"]
+[ext_resource type="Texture2D" uid="uid://is7icwmoik5a" path="res://assets/sprites/Enemy/medium/Normal/MediumNormal2.png" id="35_ci0sa"]
+[ext_resource type="Texture2D" uid="uid://dtemp3wwfde0i" path="res://assets/sprites/Enemy/medium/Toxic/MediumToxic1.png" id="36_2qahx"]
+[ext_resource type="Texture2D" uid="uid://c4r5l7ytbve50" path="res://assets/sprites/Enemy/medium/Toxic/MediumToxic2.png" id="37_4ceth"]
+[ext_resource type="Texture2D" uid="uid://bnca1gr17r1jx" path="res://assets/sprites/Enemy/medium/Void/MediumVoid1.png" id="38_djthp"]
+[ext_resource type="Texture2D" uid="uid://tau8ekslwv0q" path="res://assets/sprites/Enemy/medium/Void/MediumVoid2.png" id="39_whoqb"]
+[ext_resource type="AudioStream" uid="uid://cty1mgkvei1jb" path="res://assets/audio/explosion_2.mp3" id="40_vab5u"]
+[ext_resource type="AudioStream" uid="uid://357ybbwmnvhw" path="res://assets/audio/car.mp3" id="41_qiusc"]
 
 [sub_resource type="GDScript" id="GDScript_7p1mj"]
 script/source = "extends Node2D
@@ -18,13 +57,21 @@ var attack_range: float
 
 @onready var timer: Timer = $Timer
 @onready var turret: Node2D = get_node(turret_path)
+@onready var AnimatedSprite = $AnimatedSprite2D
+
+
+@onready var BOOM = $BOOM
+@onready var RUN = $RUN
 
 var attacking: bool = false
 
 
 func _ready() -> void:
+	AnimatedSprite.play(\"L_N\")
+	RUN.play()
 	var base = Enemy_types.BASE_DATA[enemy_type]
 	var mod = Enemy_modifiers.MOD_DATA[enemy_mod]
+	texture_enemy(enemy_type, enemy_mod)
 
 	health = int(base[\"health\"] * mod[\"health_mult\"])
 	damage = int(base[\"damage\"] * mod[\"damage_mult\"])
@@ -85,10 +132,217 @@ func attack_turret() -> void:
 		await timer.timeout
 
 	attacking = false
+
+
+func texture_enemy(size: Enemy_types.Type, mod: Enemy_modifiers.Mod) -> void:
+	match size:
+		Enemy_types.Type.LIGHT:
+			match mod:
+				Enemy_modifiers.Mod.NONE:  AnimatedSprite.play(\"L_N\")
+				Enemy_modifiers.Mod.ICE:    AnimatedSprite.play(\"L_I\")
+				Enemy_modifiers.Mod.TOXIC:  AnimatedSprite.play(\"L_T\")
+				Enemy_modifiers.Mod.FIRE:   AnimatedSprite.play(\"L_F\")
+				Enemy_modifiers.Mod.VOID:   AnimatedSprite.play(\"L_V\")
+
+		Enemy_types.Type.MEDIUM:
+			match mod:
+				Enemy_modifiers.Mod.NONE:   AnimatedSprite.play(\"N_N\")
+				Enemy_modifiers.Mod.ICE:   AnimatedSprite.play(\"N_I\")
+				Enemy_modifiers.Mod.TOXIC:  AnimatedSprite.play(\"N_T\")
+				Enemy_modifiers.Mod.FIRE:   AnimatedSprite.play(\"N_F\")
+				Enemy_modifiers.Mod.VOID:   AnimatedSprite.play(\"N_V\")
+
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	print(\"enemy took dmg:\", amount, \"hp:\", health)
+	if health <= 0:
+		RUN.stop()
+		BOOM.play()
+		AnimatedSprite.play(\"BOOM\")
+
+
+func die() -> void:
+	queue_free()
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	die()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(111.99999, 112.00001)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lioqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7v6cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vab5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qiusc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ie7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ya47j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hyejq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j0dkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sdxul")
+}],
+"loop": true,
+"name": &"BOOM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sdxul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e7lhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gst0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sm4rh")
+}],
+"loop": true,
+"name": &"L_F",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5lniq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7w3jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uiwvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0pw1s")
+}],
+"loop": true,
+"name": &"L_I",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_b5geg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_g0yyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5utat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0b4fd")
+}],
+"loop": true,
+"name": &"L_N",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_13roy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a5akt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4lt7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tysqt")
+}],
+"loop": true,
+"name": &"L_T",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_kbbx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x24ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3yi8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yb7ap")
+}],
+"loop": true,
+"name": &"L_V",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_by3os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_o6r7o")
+}],
+"loop": true,
+"name": &"N_F",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ef2cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1lc1m")
+}],
+"loop": true,
+"name": &"N_I",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_4c6tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ci0sa")
+}],
+"loop": true,
+"name": &"N_N",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_2qahx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_4ceth")
+}],
+"loop": true,
+"name": &"N_T",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_djthp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_whoqb")
+}],
+"loop": true,
+"name": &"N_V",
+"speed": 3.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
@@ -97,12 +351,21 @@ script = SubResource("GDScript_7p1mj")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(64.12501, 64.30473)
-scale = Vector2(0.99804693, 0.9952386)
-texture = ExtResource("2_md0e3")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
 position = Vector2(64, 64)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_lioqc")
+animation = &"BOOM"
+
+[node name="BOOM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_vab5u")
+
+[node name="RUN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_qiusc")
+autoplay = true
+parameters/looping = true

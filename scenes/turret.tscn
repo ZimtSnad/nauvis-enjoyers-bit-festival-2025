@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://nukj5th3ij00"]
 
 [ext_resource type="Script" uid="uid://cmug1fy230k5r" path="res://scripts/turret.gd" id="1_hls62"]
-[ext_resource type="Texture2D" uid="uid://r13xuyr111j" path="res://assets/sprites/TurretAnimation.png" id="3_6fjxm"]
-[ext_resource type="AudioStream" uid="uid://joy2i4ju54pf" path="res://assets/audio/gun.wav" id="4_dirdf"]
-[ext_resource type="AudioStream" uid="uid://vp5kj56q2ke6" path="res://assets/audio/reload.mp3" id="5_mqfwu"]
+[ext_resource type="Texture2D" uid="uid://d1wmu8iw1pbpf" path="res://assets/sprites/TurretAnimation.png" id="3_6fjxm"]
+[ext_resource type="AudioStream" uid="uid://cv05mq55opmxp" path="res://assets/audio/gun.wav" id="4_dirdf"]
+[ext_resource type="AudioStream" uid="uid://vje7bfpdys0m" path="res://assets/audio/reload.mp3" id="5_mqfwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxiwq"]
 atlas = ExtResource("3_6fjxm")
@@ -77,7 +77,7 @@ script = ExtResource("1_hls62")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 64)
-target_position = Vector2(368, 0)
+target_position = Vector2(888, 0)
 collision_mask = 4
 collide_with_areas = true
 
