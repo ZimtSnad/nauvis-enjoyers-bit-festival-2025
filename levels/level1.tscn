@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0fqnnbhs6nil"]
+[gd_scene load_steps=11 format=3 uid="uid://c0fqnnbhs6nil"]
 
 [ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="2_crycw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="8_045es"]
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="9_lf3p4"]
 [ext_resource type="PackedScene" uid="uid://dkwoktkvppq71" path="res://scenes/player.tscn" id="9_omn1t"]
+[ext_resource type="PackedScene" uid="uid://cg2iuu4jp11tn" path="res://scenes/spawner.tscn" id="10_lf3p4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,7 +41,7 @@ position = Vector2(0, 256)
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("2_crycw")]
-position = Vector2(768, 384)
+position = Vector2(640, 768)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
@@ -52,14 +53,14 @@ second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="Turret" parent="." instance=ExtResource("6_pdpul")]
-position = Vector2(768, 128)
+position = Vector2(896, 0)
 
 [node name="Enemy" parent="." instance=ExtResource("8_045es")]
-position = Vector2(1152, 128)
+position = Vector2(1536, 128)
 turret_path = NodePath("../Turret")
 
 [node name="Enemy2" parent="." instance=ExtResource("8_045es")]
-position = Vector2(1408, 128)
+position = Vector2(1792, 128)
 turret_path = NodePath("../Turret")
 
 [node name="Player" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("9_omn1t")]
@@ -71,7 +72,7 @@ position = Vector2(512, 0)
 crafter = NodePath("../2to1crafter")
 
 [node name="Ammo crate2" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_lf3p4")]
-position = Vector2(896, 384)
+position = Vector2(768, 768)
 crafter = NodePath("../2to1crafter2")
 ammotype = 5
 
@@ -79,3 +80,21 @@ ammotype = 5
 position = Vector2(384, 384)
 crafter = NodePath("../2to1crafter3")
 ammotype = 10
+
+[node name="Turret2" parent="." instance=ExtResource("6_pdpul")]
+position = Vector2(896, 384)
+
+[node name="Turret3" parent="." instance=ExtResource("6_pdpul")]
+position = Vector2(896, 768)
+
+[node name="Spawner" parent="." instance=ExtResource("10_lf3p4")]
+position = Vector2(2048, 0)
+turret_path = NodePath("../Turret")
+
+[node name="Spawner2" parent="." instance=ExtResource("10_lf3p4")]
+position = Vector2(2048, 384)
+turret_path = NodePath("../Turret2")
+
+[node name="Spawner3" parent="." instance=ExtResource("10_lf3p4")]
+position = Vector2(2048, 768)
+turret_path = NodePath("../Turret3")
