@@ -11,6 +11,7 @@
 export.cfg
 export_credentials.cfg
 
+
 # Mono-specific ignores
 # The .mono folder contains generated files for C# projects.
 # Note: Excluding this means other users will need to build the C# project
