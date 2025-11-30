@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 	var dir_y = Input.get_axis("up", "down")
 	target_pos += Vector2(dir_x * delta, dir_y * delta) * velocity * (Vector2(1, 1)/camera.zoom)
 
-	target_pos = clamp(target_pos, Vector2(0, 0), Vector2(x_bound, y_bound))
-
+	target_pos.x = clamp(target_pos.x, 0, x_bound)
+	target_pos.y = clamp(target_pos.y, 0, y_bound)
 	self.position = lerp(self.position, target_pos, move_smoothness)
 	
 	if(pow((camera.zoom.x - target_zoom.x), 2) + pow((camera.zoom.y - target_zoom.y), 2) < 0.001):
