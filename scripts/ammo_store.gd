@@ -17,10 +17,10 @@ func _ready() -> void:
 		ammo[t] = 0
 
 	# przykład testowy:
-	ammo[Ammo_types.Type.LIGHT_NONE] = 2
-	ammo[Ammo_types.Type.MEDIUM_FIRE] = 10
-	ammo[Ammo_types.Type.MEDIUM_NONE] = 3
-	ammo[Ammo_types.Type.HEAVY_FIRE] = 2
+	ammo[Ammo_types.Type.LIGHT_NONE] = 100
+	#ammo[Ammo_types.Type.MEDIUM_FIRE] = 10
+	ammo[Ammo_types.Type.MEDIUM_NONE] = 1
+	#ammo[Ammo_types.Type.HEAVY_FIRE] = 2
 
 
 func get_amount(ammo_type: Ammo_types.Type) -> int:
