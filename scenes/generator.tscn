@@ -1,8 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://c434tec7m0enm"]
+[gd_scene load_steps=8 format=3 uid="uid://c434tec7m0enm"]
 
 [ext_resource type="Texture2D" uid="uid://dnbi688lefctw" path="res://assets/sprites/factory1.png" id="1_5yxne"]
 [ext_resource type="Script" uid="uid://dcme4fiadacvh" path="res://scripts/generator.gd" id="1_w5vnv"]
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="3_ef8yp"]
+[ext_resource type="PackedScene" uid="uid://bg1d0b3cma3vm" path="res://scenes/Slider.tscn" id="4_rqoq6"]
+
+[sub_resource type="Animation" id="Animation_rqoq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building sprite:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Building sprite:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Building sprite:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [64.0]
+}
 
 [sub_resource type="Animation" id="Animation_ef8yp"]
 resource_name = "new_animation"
@@ -45,45 +85,6 @@ tracks/2/keys = {
 "values": [64.0, 59.0, 64.0]
 }
 
-[sub_resource type="Animation" id="Animation_rqoq6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Building sprite:scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Building sprite:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Building sprite:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [64.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4pjfl"]
 _data = {
 &"RESET": SubResource("Animation_rqoq6"),
@@ -97,6 +98,13 @@ script = ExtResource("1_w5vnv")
 position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("1_5yxne")
+
+[node name="HSlider" parent="Building sprite" instance=ExtResource("4_rqoq6")]
+offset_left = -12.5
+offset_top = 11.0
+offset_right = 75.5
+offset_bottom = 23.0
+scale = Vector2(0.25, 0.25)
 
 [node name="Timer" type="Timer" parent="."]
 

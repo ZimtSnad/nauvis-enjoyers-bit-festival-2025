@@ -4,6 +4,7 @@ extends Node2D
 @onready var output_label = $Output
 @export var beacon_manager: Node2D
 @onready var building_animator = $AnimationPlayer
+@onready var progress_bar = $"Building sprite/HSlider"
 var nodes_connected = 0
 var resource_count = 0
 var can_take = false
@@ -24,7 +25,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	output_label.text = str(resource_count)
-	
+
+	if not timer.is_stopped():
+		progress_bar.value = ((timer.wait_time - timer.time_left) / timer.wait_time) * 100.0
+	else:
+		progress_bar.value = 0
+		
 	var beacon_time_multipier = beacon_manager.get_time_modifier_at_world(self.position)
 	if beacon_time_multipier == 0 and not timer.is_stopped():
 		timer.stop()
@@ -36,6 +42,7 @@ func _process(delta: float) -> void:
 	elif beacon_time_multipier != 0 :
 		timer.wait_time = (1 / beacon_time_multipier) * production_time
 		building_animator.speed_scale = (1/timer.wait_time) * 6
+
 		
 	if resource_count >= nodes_connected:
 		can_take = true

@@ -33,13 +33,10 @@ func _unhandled_input(event):
 				place_at_cursor()
 				update_time_modifiers()
 				update_time_modifier_mat()
-			print("beacons currently placed: " + str(placed_beacons))
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			delete_at_cursor()
 			update_time_modifiers()
 			update_time_modifier_mat()
-			print(get_time_modifier_at_world(Vector2(1,1)))
-			print("beacons currently placed: " + str(placed_beacons))
 
 
 func get_time_modifier_at_world(pos_world: Vector2) -> float:
