@@ -3,6 +3,7 @@ extends Node2D
 
 @export var grid: GridManager
 @export var beacon_limit: int
+@export var total_time = 1.0
 # Called when the node enters the scene tree for the first time.
 
 
@@ -12,13 +13,17 @@ var placed_beacons = 0
 
 var beacons: Array = []
 var beacon_matrix := []
+var time_modfier_matrix := []
 
 func _ready():
 	for y in range(grid.grid_size[0]):
 		var row := []
+		var row2 := []
 		for x in range(grid.grid_size[1]):
-			row.append(null)  # no object yet
+			row.append(null) 
+			row2.append(0) 
 		beacon_matrix.append(row)
+		time_modfier_matrix.append(row2)
 	
 
 func _unhandled_input(event):
@@ -27,17 +32,38 @@ func _unhandled_input(event):
 			if(placed_beacons < beacon_limit):
 				place_at_cursor()
 				update_time_modifiers()
+				update_time_modifier_mat()
 			print("beacons currently placed: " + str(placed_beacons))
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			delete_at_cursor()
 			update_time_modifiers()
+			update_time_modifier_mat()
+			print(get_time_modifier_at_world(Vector2(1,1)))
 			print("beacons currently placed: " + str(placed_beacons))
-			
-			
+
+
+func get_time_modifier_at_world(pos_world: Vector2) -> float:
+	var pos_grid = grid.world_to_grid(pos_world)
+	return time_modfier_matrix[pos_grid.x][pos_grid.y]
+	
+func update_time_modifier_mat():
+	for y in range(grid.grid_size[0]):
+		for x in range(grid.grid_size[1]):
+			time_modfier_matrix[x][y] = 0
+		
+	for x in range(grid.grid_size[0]):
+		for y in range(grid.grid_size[1]):
+			for beacon in beacons:
+				var beacon_grid_pos = grid.world_to_grid(beacon.position)
+				if(pow(x - beacon_grid_pos.x,2) + pow(y - beacon_grid_pos.y, 2) < pow(beacon.radius_cells, 2) - 1):
+					time_modfier_matrix[x][y] += beacon.time_modifier
+	return
+	
+
 
 func update_time_modifiers():
 	for beacon in beacons:
-		beacon.time_modifier = 0.5
+		beacon.time_modifier = total_time / placed_beacons
 
 func place_at_cursor():
 	# Get the mouse position in world coordinates
