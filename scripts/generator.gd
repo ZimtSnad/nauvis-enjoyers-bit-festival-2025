@@ -5,6 +5,12 @@ extends Node2D
 @export var beacon_manager: Node2D
 @onready var building_animator = $AnimationPlayer
 @onready var progress_bar = $"Building sprite/HSlider"
+
+@export var output_material_sprite: Texture
+@onready var output_sprite_holder = $InputMaterialsGuiSingle/outputMaterialSpriteHolder/Sprite
+
+
+
 var nodes_connected = 0
 var resource_count = 0
 var can_take = false
@@ -18,6 +24,7 @@ func decrease_resources():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	output_sprite_holder.texture = output_material_sprite
 	building_animator.speed_scale = 0
 	pass # Replace with function body.
 

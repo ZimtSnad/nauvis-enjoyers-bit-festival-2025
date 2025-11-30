@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c434tec7m0enm"]
+[gd_scene load_steps=9 format=3 uid="uid://c434tec7m0enm"]
 
-[ext_resource type="Texture2D" uid="uid://dnbi688lefctw" path="res://assets/sprites/factory1.png" id="1_5yxne"]
+[ext_resource type="Texture2D" uid="uid://bhey7rwphpknp" path="res://assets/sprites/factory1.png" id="1_5yxne"]
 [ext_resource type="Script" uid="uid://dcme4fiadacvh" path="res://scripts/generator.gd" id="1_w5vnv"]
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="3_ef8yp"]
 [ext_resource type="PackedScene" uid="uid://bg1d0b3cma3vm" path="res://scenes/Slider.tscn" id="4_rqoq6"]
+[ext_resource type="Texture2D" uid="uid://cdjgarrfe0qnr" path="res://assets/GUI/Input_materials_gui_single.png" id="5_kgmdj"]
 
 [sub_resource type="Animation" id="Animation_rqoq6"]
 length = 0.001
@@ -123,5 +124,16 @@ libraries = {
 }
 autoplay = "new_animation"
 speed_scale = 4.0
+
+[node name="InputMaterialsGuiSingle" type="Sprite2D" parent="."]
+position = Vector2(64, 192)
+scale = Vector2(4, 4)
+texture = ExtResource("5_kgmdj")
+
+[node name="outputMaterialSpriteHolder" type="Node2D" parent="InputMaterialsGuiSingle"]
+position = Vector2(0, -6.5)
+
+[node name="Sprite" type="Sprite2D" parent="InputMaterialsGuiSingle/outputMaterialSpriteHolder"]
+scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="Timer" to="." method="_on_resource_timer_timeout"]

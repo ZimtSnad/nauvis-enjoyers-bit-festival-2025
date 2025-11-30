@@ -14,6 +14,14 @@ extends Node2D
 @onready var building_animator = $"Building animation"
 @onready var progress_bar = $"Building sprite/HSlider"
 
+@export var item1_sprite: Texture
+@export var item2_sprite: Texture
+@export var item_output_sprite: Texture
+
+@onready var item1_holder = $"gui/Top cloud/First sprite"
+@onready var item2_holder = $"gui/Top cloud/Second sprite"
+@onready var output_holder = $"gui/Bot cloud/Output sprite"
+
 var first_counter = 0
 var second_counter = 0
 var output_counter = 0
@@ -23,6 +31,10 @@ var can_take = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	item1_holder.texture = item1_sprite
+	item2_holder.texture = item2_sprite
+	output_holder.texture = item_output_sprite
+	
 	building_animator.speed_scale = 0
 	first_generator.increase_nodes()
 	second_generator.increase_nodes()
@@ -43,7 +55,6 @@ func can_craft():
 func _process(delta: float) -> void:
 	
 	if not timer.is_stopped():
-		print(timer)
 		progress_bar.value = ((timer.wait_time - timer.time_left) / timer.wait_time) * 100.0
 	else:
 		progress_bar.value = 0
