@@ -15,7 +15,7 @@
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("3_i2041")
 cell_size = Vector2(128, 128)
-grid_size = Vector2(5, 5)
+grid_size = Vector2(8, 8)
 
 [node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
 script = ExtResource("4_xy4tn")
@@ -26,25 +26,30 @@ script = ExtResource("5_usj0q")
 grid = NodePath("../GridManager")
 beacon_limit = 135
 
-[node name="Generator" parent="." instance=ExtResource("1_v8kj3")]
+[node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_v8kj3")]
+beacon_manager = NodePath("../BeaconManager")
 
-[node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
-position = Vector2(256, 0)
+[node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("2_crycw")]
+position = Vector2(384, 0)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
 
-[node name="Generator2" parent="." instance=ExtResource("1_v8kj3")]
-position = Vector2(0, 128)
+[node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_v8kj3")]
+position = Vector2(0, 256)
+beacon_manager = NodePath("../BeaconManager")
 
-[node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
-position = Vector2(256, 128)
+[node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("2_crycw")]
+position = Vector2(768, 384)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
 
-[node name="2to1crafter3" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_crycw")]
-position = Vector2(256, 256)
+[node name="2to1crafter3" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("2_crycw")]
+position = Vector2(256, 384)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
 
 [node name="Turret" parent="." instance=ExtResource("6_pdpul")]
 position = Vector2(768, 128)
@@ -54,23 +59,23 @@ position = Vector2(1152, 128)
 turret_path = NodePath("../Turret")
 
 [node name="Enemy2" parent="." instance=ExtResource("8_045es")]
-position = Vector2(1536, 128)
+position = Vector2(1408, 128)
 turret_path = NodePath("../Turret")
 
 [node name="Player" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("9_omn1t")]
-position = Vector2(512, 256)
+position = Vector2(640, 256)
 grid = NodePath("../GridManager")
 
 [node name="Ammo crate" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_lf3p4")]
-position = Vector2(384, 0)
+position = Vector2(512, 0)
 crafter = NodePath("../2to1crafter")
 
 [node name="Ammo crate2" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_lf3p4")]
-position = Vector2(384, 128)
+position = Vector2(896, 384)
 crafter = NodePath("../2to1crafter2")
 ammotype = 5
 
 [node name="Ammo crate3" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_lf3p4")]
-position = Vector2(384, 256)
+position = Vector2(384, 384)
 crafter = NodePath("../2to1crafter3")
 ammotype = 10

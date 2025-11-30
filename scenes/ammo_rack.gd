@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var crafter : Area2D
+@export var crafter : Node2D
 @export var ammotype : Ammo_types.Type
 
 # Called when the node enters the scene tree for the first time.
