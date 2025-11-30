@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://56yqfxdkyu6l"]
 
-[ext_resource type="Texture2D" uid="uid://codvli7pguf0a" path="res://assets/sprites/factory2.png" id="1_ce2oh"]
+[ext_resource type="Texture2D" uid="uid://wlat1aq3bdlj" path="res://assets/sprites/factory2.png" id="1_ce2oh"]
 [ext_resource type="Script" uid="uid://b4136hexwjn20" path="res://scripts/2_to_1_crafter.gd" id="1_vklko"]
-[ext_resource type="Texture2D" uid="uid://bt2pkyiwgwf06" path="res://assets/GUI/Input_materials_gui_double.png" id="2_lmwtn"]
+[ext_resource type="Texture2D" uid="uid://u3d6ia8nhdof" path="res://assets/GUI/Input_materials_gui_double.png" id="2_lmwtn"]
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="2_rsks8"]
-[ext_resource type="Texture2D" uid="uid://drhk4fxj0yhkk" path="res://assets/GUI/Input_materials_gui_single.png" id="4_ey18k"]
+[ext_resource type="Texture2D" uid="uid://cdjgarrfe0qnr" path="res://assets/GUI/Input_materials_gui_single.png" id="4_ey18k"]
 [ext_resource type="PackedScene" uid="uid://bg1d0b3cma3vm" path="res://scenes/Slider.tscn" id="6_2mplf"]
 [ext_resource type="Animation" uid="uid://daafy611dx51i" path="res://assets/player animations/building_squash_stretch.res" id="6_ey18k"]
 
@@ -121,6 +121,14 @@ text = "10"
 label_settings = ExtResource("2_rsks8")
 metadata/_edit_use_anchors_ = true
 
+[node name="Second sprite" type="Sprite2D" parent="gui/Top cloud"]
+position = Vector2(-5.5, 6.0000005)
+scale = Vector2(0.4, 0.4)
+
+[node name="First sprite" type="Sprite2D" parent="gui/Top cloud"]
+position = Vector2(-5.75, -4)
+scale = Vector2(0.4, 0.4)
+
 [node name="Bot cloud" type="Sprite2D" parent="gui"]
 position = Vector2(64, 192)
 scale = Vector2(4, 4)
@@ -134,6 +142,10 @@ offset_bottom = 24.0
 scale = Vector2(0.25, 0.25)
 text = "10"
 label_settings = ExtResource("2_rsks8")
+
+[node name="Output sprite" type="Sprite2D" parent="gui/Bot cloud"]
+position = Vector2(-5.9999995, -6.4999995)
+scale = Vector2(0.4, 0.4)
 
 [node name="Building sprite" type="Sprite2D" parent="."]
 position = Vector2(64, 64)

@@ -4,7 +4,6 @@ extends Node2D
 @export var grid: GridManager
 @export var beacon_limit: int
 @export var total_time = 1.0
-# Called when the node enters the scene tree for the first time.
 
 
 @export var beacon_scene = preload("res://scenes/beacon.tscn")
@@ -16,6 +15,7 @@ var beacon_matrix := []
 var time_modfier_matrix := []
 
 func _ready():
+
 	for y in range(grid.grid_size[0]):
 		var row := []
 		var row2 := []
