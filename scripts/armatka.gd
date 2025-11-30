@@ -8,10 +8,13 @@ extends Node2D
 
 @onready var timer: Timer = $Timer
 
+@onready var AnimatedSprite = $AnimatedSprite2D
+
 var current_enemy: Node2D = null
 var shooting: bool = false
 
 func _ready() -> void:
+	AnimatedSprite.play("idle")
 	timer.one_shot = true
 	timer.wait_time = delay_between_shots
 	
@@ -65,6 +68,7 @@ func shoot_at_enemy(body: Node) -> void:
 		print("Strzelam ammo:", ammo_type, " pozostało:", AmmoStore.get_amount(ammo_type))
 
 		# start animation
+		AnimatedSprite.play("shoot")
 
 		if bullet_scene == null:
 			push_warning("bullet_scene nie ustawiony w Inspectorze!")
@@ -80,12 +84,11 @@ func shoot_at_enemy(body: Node) -> void:
 
 		# przekaż parametry do bulletu
 		bullet.direction = dir
-		bullet.damage = damage
-		bullet.speed = bullet_speed
 		print("ammo_type: ", ammo_type)
 		bullet.ammo_type = ammo_type
 
 		get_tree().current_scene.add_child(bullet)
+		#AnimatedSprite.stop()
 
 	
 		# zadaj obrażenia

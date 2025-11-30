@@ -14,12 +14,16 @@ var attack_range: float
 @onready var timer: Timer = $Timer
 @onready var turret: Node2D = get_node(turret_path)
 
+@onready var AnimatedSprite = $AnimatedSprite2D
+
 var attacking: bool = false
 
 
 func _ready() -> void:
+	AnimatedSprite.play("loop_L_N")
 	var base = Enemy_types.BASE_DATA[enemy_type]
 	var mod = Enemy_modifiers.MOD_DATA[enemy_mod]
+	type_and_mod_textures(enemy_type, enemy_mod)
 
 	health = int(base["health"] * mod["health_mult"])
 	damage = int(base["damage"] * mod["damage_mult"])
@@ -85,8 +89,38 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("enemy took dmg:", amount, "hp:", health)
 	if health <= 0:
-		die()
+		AnimatedSprite.play("BOOM")
 
 
 func die() -> void:
 	queue_free()
+
+func type_and_mod_textures(size: Enemy_types.Type, mod: Enemy_modifiers.Mod) -> void:
+	match size:
+		Enemy_types.Type.LIGHT:
+			match mod:
+				Enemy_modifiers.Mod.NONE: AnimatedSprite.play("loop_L_N")
+				Enemy_modifiers.Mod.ICE: AnimatedSprite.play("loop_L_I")
+				Enemy_modifiers.Mod.TOXIC: AnimatedSprite.play("loop_L_T")
+				Enemy_modifiers.Mod.FIRE: AnimatedSprite.play("loop_L_F")
+				Enemy_modifiers.Mod.VOID: AnimatedSprite.play("loop_L_V")
+
+		Enemy_types.Type.MEDIUM:
+			match mod:
+				Enemy_modifiers.Mod.NONE: AnimatedSprite.play("loop_M_N")
+				Enemy_modifiers.Mod.ICE: AnimatedSprite.play("loop_M_I")
+				Enemy_modifiers.Mod.TOXIC: AnimatedSprite.play("loop_M_T")
+				Enemy_modifiers.Mod.FIRE: AnimatedSprite.play("loop_M_F")
+				Enemy_modifiers.Mod.VOID: AnimatedSprite.play("loop_M_V")
+
+		#Enemy_types.Type.HEAVY:
+			#match mod:
+				#Enemy_modifiers.Mod.NONE: AnimatedSprite.play("loop_H_N")
+				#Enemy_modifiers.Mod.ICE: AnimatedSprite.play("loop_H_I")
+				#Enemy_modifiers.Mod.TOXIC: AnimatedSprite.play("loop_H_T")
+				#Enemy_modifiers.Mod.FIRE: AnimatedSprite.play("loop_H_F")
+				#Enemy_modifiers.Mod.VOID: AnimatedSprite.play("loop_H_V")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	die()

@@ -1,5 +1,5 @@
 extends Node
-class_name Ammo_store
+class_name Ammo_tore
 
 var ammo: Dictionary = {}
 
