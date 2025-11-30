@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hx1ca5hwib8c"
-path="res://.godot/imported/dzialo.png-e5dda9e54cbee68e93699d50951c4443.ctex"
+uid="uid://drd5fao185k1h"
+path="res://.godot/imported/dzialo.png-e6b34888412af071e7469120d3e5c070.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/dzialo.png"
-dest_files=["res://.godot/imported/dzialo.png-e5dda9e54cbee68e93699d50951c4443.ctex"]
+source_file="res://assets/sprites/dzialo.png"
+dest_files=["res://.godot/imported/dzialo.png-e6b34888412af071e7469120d3e5c070.ctex"]
 
 [params]
 
