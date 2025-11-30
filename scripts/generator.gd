@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer = $Timer
 @onready var output_label = $Output
 @export var beacon_manager: Node2D
-
+@onready var building_animator = $AnimationPlayer
 var nodes_connected = 0
 var resource_count = 0
 var can_take = false
@@ -17,6 +17,7 @@ func decrease_resources():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	building_animator.speed_scale = 0
 	pass # Replace with function body.
 
 
@@ -27,11 +28,15 @@ func _process(delta: float) -> void:
 	var beacon_time_multipier = beacon_manager.get_time_modifier_at_world(self.position)
 	if beacon_time_multipier == 0 and not timer.is_stopped():
 		timer.stop()
+		building_animator.speed_scale = 0
 	elif beacon_time_multipier != 0 and timer.is_stopped():
 		timer.wait_time = (1 / beacon_time_multipier) * production_time
 		timer.start()
+		building_animator.speed_scale = (1/timer.wait_time) * 6
 	elif beacon_time_multipier != 0 :
 		timer.wait_time = (1 / beacon_time_multipier) * production_time
+		building_animator.speed_scale = (1/timer.wait_time) * 6
+		
 	if resource_count >= nodes_connected:
 		can_take = true
 	else:
