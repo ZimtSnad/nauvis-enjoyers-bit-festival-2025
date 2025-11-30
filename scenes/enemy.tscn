@@ -367,5 +367,6 @@ stream = ExtResource("40_vab5u")
 
 [node name="RUN" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_qiusc")
+volume_db = -8.607
 autoplay = true
 parameters/looping = true
