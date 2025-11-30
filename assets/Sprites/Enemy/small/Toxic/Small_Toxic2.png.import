@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjyxv2df0tl3p"
-path="res://.godot/imported/Small_Toxic2.png-f898a9e586e155d5f27233ba61d7b419.ctex"
+uid="uid://beuul72lx6jj"
+path="res://.godot/imported/Small_Toxic2.png-84485eb7c3e0ff7f40f01e013d5a030d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/small/Toxic/Small_Toxic2.png"
-dest_files=["res://.godot/imported/Small_Toxic2.png-f898a9e586e155d5f27233ba61d7b419.ctex"]
+source_file="res://assets/sprites/Enemy/small/Toxic/Small_Toxic2.png"
+dest_files=["res://.godot/imported/Small_Toxic2.png-84485eb7c3e0ff7f40f01e013d5a030d.ctex"]
 
 [params]
 

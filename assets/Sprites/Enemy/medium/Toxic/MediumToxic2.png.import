@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8upbjoa3sbue"
-path="res://.godot/imported/MediumToxic2.png-e41785fff8ae93d19a0b5523abeda83d.ctex"
+uid="uid://cx2vhtsw782f0"
+path="res://.godot/imported/MediumToxic2.png-44d7fd1faf6dd715776fcfc6524f3e4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/medium/Toxic/MediumToxic2.png"
-dest_files=["res://.godot/imported/MediumToxic2.png-e41785fff8ae93d19a0b5523abeda83d.ctex"]
+source_file="res://assets/sprites/Enemy/medium/Toxic/MediumToxic2.png"
+dest_files=["res://.godot/imported/MediumToxic2.png-44d7fd1faf6dd715776fcfc6524f3e4f.ctex"]
 
 [params]
 

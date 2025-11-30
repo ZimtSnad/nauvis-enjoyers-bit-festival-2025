@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b31k3itjr1fd1"
-path="res://.godot/imported/Small_Void3.png-21a053ec7d0978e0841b65268b0db1c9.ctex"
+uid="uid://b6gsdaybcywnr"
+path="res://.godot/imported/Small_Void3.png-944eb7787d13b82f12c00e29f91b790a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/small/Void/Small_Void3.png"
-dest_files=["res://.godot/imported/Small_Void3.png-21a053ec7d0978e0841b65268b0db1c9.ctex"]
+source_file="res://assets/sprites/Enemy/small/Void/Small_Void3.png"
+dest_files=["res://.godot/imported/Small_Void3.png-944eb7787d13b82f12c00e29f91b790a.ctex"]
 
 [params]
 

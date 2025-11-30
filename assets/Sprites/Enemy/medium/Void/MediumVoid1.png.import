@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mnpox5p1gr0e"
-path="res://.godot/imported/MediumVoid1.png-9bf69381c1902db2272391c2c9432051.ctex"
+uid="uid://cnya8mi40uqx3"
+path="res://.godot/imported/MediumVoid1.png-4d6e55546f00e5eb51ed93a8b1c057fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/medium/Void/MediumVoid1.png"
-dest_files=["res://.godot/imported/MediumVoid1.png-9bf69381c1902db2272391c2c9432051.ctex"]
+source_file="res://assets/sprites/Enemy/medium/Void/MediumVoid1.png"
+dest_files=["res://.godot/imported/MediumVoid1.png-4d6e55546f00e5eb51ed93a8b1c057fe.ctex"]
 
 [params]
 

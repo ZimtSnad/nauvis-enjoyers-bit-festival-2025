@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beiqevpf4plxj"
-path="res://.godot/imported/Small_Fire4.png-f9cab8f143de666f0bf2367aac42e189.ctex"
+uid="uid://vlt56rco3xyb"
+path="res://.godot/imported/Small_Fire4.png-66f41eb6c4c817d1a30ae47a395079e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/small/Fire/Small_Fire4.png"
-dest_files=["res://.godot/imported/Small_Fire4.png-f9cab8f143de666f0bf2367aac42e189.ctex"]
+source_file="res://assets/sprites/Enemy/small/Fire/Small_Fire4.png"
+dest_files=["res://.godot/imported/Small_Fire4.png-66f41eb6c4c817d1a30ae47a395079e9.ctex"]
 
 [params]
 

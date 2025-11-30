@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyhcgck7yt2an"
-path="res://.godot/imported/MediumIce2.png-2bf1e75f08146cfb9f0f5a5b3f25c312.ctex"
+uid="uid://cfaag6wbj53b6"
+path="res://.godot/imported/MediumIce2.png-2728d39bd512ff2e38265693c28cb18b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/medium/Ice/MediumIce2.png"
-dest_files=["res://.godot/imported/MediumIce2.png-2bf1e75f08146cfb9f0f5a5b3f25c312.ctex"]
+source_file="res://assets/sprites/Enemy/medium/Ice/MediumIce2.png"
+dest_files=["res://.godot/imported/MediumIce2.png-2728d39bd512ff2e38265693c28cb18b.ctex"]
 
 [params]
 

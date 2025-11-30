@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgroqt1g8n8dj"
-path="res://.godot/imported/Small_Ice2.png-ba4f9f88fbb27e9f2ce9de726b67c905.ctex"
+uid="uid://df1bi4figko4i"
+path="res://.godot/imported/Small_Ice2.png-450b2a4b0bc022c1897a9d237da69b87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/small/Ice/Small_Ice2.png"
-dest_files=["res://.godot/imported/Small_Ice2.png-ba4f9f88fbb27e9f2ce9de726b67c905.ctex"]
+source_file="res://assets/sprites/Enemy/small/Ice/Small_Ice2.png"
+dest_files=["res://.godot/imported/Small_Ice2.png-450b2a4b0bc022c1897a9d237da69b87.ctex"]
 
 [params]
 

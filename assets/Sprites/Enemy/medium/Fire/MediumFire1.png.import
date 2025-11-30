@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjn5tbwndipf4"
-path="res://.godot/imported/MediumFire1.png-d85757164c40790fd453202dd4f6720f.ctex"
+uid="uid://ck3cpqipwsc7"
+path="res://.godot/imported/MediumFire1.png-10259092199187517c5448c356706ef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Enemy/medium/Fire/MediumFire1.png"
-dest_files=["res://.godot/imported/MediumFire1.png-d85757164c40790fd453202dd4f6720f.ctex"]
+source_file="res://assets/sprites/Enemy/medium/Fire/MediumFire1.png"
+dest_files=["res://.godot/imported/MediumFire1.png-10259092199187517c5448c356706ef7.ctex"]
 
 [params]
 

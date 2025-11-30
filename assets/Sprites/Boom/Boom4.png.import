@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7u38rcptxk6b"
-path="res://.godot/imported/Boom4.png-754349b2f2b794da68e191a3a195a034.ctex"
+uid="uid://cyrhfjq3kqr3u"
+path="res://.godot/imported/Boom4.png-4956697dbb077005d26849fc4ecea6b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Boom/Boom4.png"
-dest_files=["res://.godot/imported/Boom4.png-754349b2f2b794da68e191a3a195a034.ctex"]
+source_file="res://assets/sprites/Boom/Boom4.png"
+dest_files=["res://.godot/imported/Boom4.png-4956697dbb077005d26849fc4ecea6b4.ctex"]
 
 [params]
 
