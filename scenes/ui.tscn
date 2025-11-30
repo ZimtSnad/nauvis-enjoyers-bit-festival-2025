@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=3 uid="uid://20xylhxx16fd"]
 
-[ext_resource type="Texture2D" uid="uid://w0cajnb5xjhs" path="res://assets/Sprites/MainMenuTailSet.png" id="1_6rmj2"]
-[ext_resource type="FontFile" uid="uid://chlny0f8undvs" path="res://assets/fonts/pixel.ttf" id="2_vsj0x"]
-[ext_resource type="Texture2D" uid="uid://wtux7fkxron3" path="res://assets/Sprites/Bullet_Normal_Small.png" id="3_qsv74"]
-[ext_resource type="Texture2D" uid="uid://vg4lxdoyabeb" path="res://assets/Sprites/Bullet_Normal_Ice.png" id="4_h1mc3"]
-[ext_resource type="Texture2D" uid="uid://c6i525hfhdemc" path="res://assets/Sprites/Bullet_Normal_Toxic.png" id="5_cof4p"]
-[ext_resource type="Texture2D" uid="uid://bws42dionuv16" path="res://assets/Sprites/Bullet_Normal_Fire.png" id="6_f7tlh"]
-[ext_resource type="Texture2D" uid="uid://blfxmldwa3deo" path="res://assets/Sprites/Bullet_Normal_Void.png" id="7_8k7j3"]
-[ext_resource type="Texture2D" uid="uid://dbiao2isa6mv8" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="8_jkdwc"]
-[ext_resource type="Texture2D" uid="uid://dyu25kti7f2d8" path="res://assets/Sprites/Bullet_Medium_Ice.png" id="9_rlppe"]
-[ext_resource type="Texture2D" uid="uid://cbexd4sfy1gqg" path="res://assets/Sprites/Bullet_Medium_Toxic.png" id="10_ycmcx"]
-[ext_resource type="Texture2D" uid="uid://uq2ixb0fenfi" path="res://assets/Sprites/Bullet_Medium_Fire.png" id="11_kupmu"]
-[ext_resource type="Texture2D" uid="uid://bv5xvld3gpht0" path="res://assets/Sprites/Bullet_Medium_Void.png" id="12_catpy"]
+[ext_resource type="Texture2D" uid="uid://benur1uhgx5c3" path="res://assets/Sprites/MainMenuTailSet.png" id="1_6rmj2"]
+[ext_resource type="FontFile" uid="uid://l7pmcia8s3cj" path="res://assets/fonts/pixel.ttf" id="2_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://ci7qai8pcgw83" path="res://assets/Sprites/Bullet_Normal_Small.png" id="3_qsv74"]
+[ext_resource type="Texture2D" uid="uid://dho8akah1oj48" path="res://assets/Sprites/Bullet_Normal_Ice.png" id="4_h1mc3"]
+[ext_resource type="Texture2D" uid="uid://c1mf6jyobg02f" path="res://assets/Sprites/Bullet_Normal_Toxic.png" id="5_cof4p"]
+[ext_resource type="Texture2D" uid="uid://doc14f56mldbf" path="res://assets/Sprites/Bullet_Normal_Fire.png" id="6_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://ckpaiqrd0lsd" path="res://assets/Sprites/Bullet_Normal_Void.png" id="7_8k7j3"]
+[ext_resource type="Texture2D" uid="uid://c2wa1w0nhwksh" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="8_jkdwc"]
+[ext_resource type="Texture2D" uid="uid://dsh6c4k5mor63" path="res://assets/Sprites/Bullet_Medium_Ice.png" id="9_rlppe"]
+[ext_resource type="Texture2D" uid="uid://bgcsy55xtcg5c" path="res://assets/Sprites/Bullet_Medium_Toxic.png" id="10_ycmcx"]
+[ext_resource type="Texture2D" uid="uid://chs4lp6wdwmi" path="res://assets/Sprites/Bullet_Medium_Fire.png" id="11_kupmu"]
+[ext_resource type="Texture2D" uid="uid://drsylkoxk03sv" path="res://assets/Sprites/Bullet_Medium_Void.png" id="12_catpy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41akx"]
 texture = ExtResource("1_6rmj2")
@@ -80,7 +80,7 @@ theme_override_fonts/font = ExtResource("2_vsj0x")
 theme_override_font_sizes/font_size = 10
 text = "Ammo"
 
-[node name="AmmoSmall" type="Node" parent="."]
+[node name="AmmoSmall" type="Node2D" parent="."]
 
 [node name="NormalSmall" type="Sprite2D" parent="AmmoSmall"]
 position = Vector2(29, 98)
@@ -147,7 +147,7 @@ theme_override_fonts/font = ExtResource("2_vsj0x")
 theme_override_font_sizes/font_size = 10
 text = "x"
 
-[node name="AmmoMedium" type="Node" parent="."]
+[node name="AmmoMedium" type="Node2D" parent="."]
 
 [node name="NormalMedium" type="Sprite2D" parent="AmmoMedium"]
 position = Vector2(70.165, 91.00001)

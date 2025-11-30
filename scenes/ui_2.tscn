@@ -1,0 +1,154 @@
+[gd_scene load_steps=12 format=3 uid="uid://d1iv28t3ljxuo"]
+
+[ext_resource type="Texture2D" uid="uid://ci7qai8pcgw83" path="res://assets/Sprites/Bullet_Normal_Small.png" id="1_3bp1u"]
+[ext_resource type="FontFile" uid="uid://l7pmcia8s3cj" path="res://assets/fonts/pixel.ttf" id="2_kongf"]
+[ext_resource type="Texture2D" uid="uid://dho8akah1oj48" path="res://assets/Sprites/Bullet_Normal_Ice.png" id="3_581xy"]
+[ext_resource type="Texture2D" uid="uid://c1mf6jyobg02f" path="res://assets/Sprites/Bullet_Normal_Toxic.png" id="4_clw1r"]
+[ext_resource type="Texture2D" uid="uid://doc14f56mldbf" path="res://assets/Sprites/Bullet_Normal_Fire.png" id="5_whpvo"]
+[ext_resource type="Texture2D" uid="uid://ckpaiqrd0lsd" path="res://assets/Sprites/Bullet_Normal_Void.png" id="6_wvi5c"]
+[ext_resource type="Texture2D" uid="uid://c2wa1w0nhwksh" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="7_jqybt"]
+[ext_resource type="Texture2D" uid="uid://dsh6c4k5mor63" path="res://assets/Sprites/Bullet_Medium_Ice.png" id="8_2ynoy"]
+[ext_resource type="Texture2D" uid="uid://bgcsy55xtcg5c" path="res://assets/Sprites/Bullet_Medium_Toxic.png" id="9_ajxq5"]
+[ext_resource type="Texture2D" uid="uid://chs4lp6wdwmi" path="res://assets/Sprites/Bullet_Medium_Fire.png" id="10_ft3v6"]
+[ext_resource type="Texture2D" uid="uid://drsylkoxk03sv" path="res://assets/Sprites/Bullet_Medium_Void.png" id="11_uwccn"]
+
+[node name="UI2" type="Node2D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AmmoSmall" type="Node" parent="VBoxContainer"]
+
+[node name="NormalSmall" type="Sprite2D" parent="VBoxContainer/AmmoSmall"]
+position = Vector2(29, 98)
+texture = ExtResource("1_3bp1u")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoSmall/NormalSmall"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalIce" type="Sprite2D" parent="VBoxContainer/AmmoSmall"]
+position = Vector2(29, 124)
+texture = ExtResource("3_581xy")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoSmall/NormalIce"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalToxic" type="Sprite2D" parent="VBoxContainer/AmmoSmall"]
+position = Vector2(29, 149)
+texture = ExtResource("4_clw1r")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoSmall/NormalToxic"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalFire" type="Sprite2D" parent="VBoxContainer/AmmoSmall"]
+position = Vector2(29, 174)
+texture = ExtResource("5_whpvo")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoSmall/NormalFire"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalVoid" type="Sprite2D" parent="VBoxContainer/AmmoSmall"]
+position = Vector2(29, 199)
+texture = ExtResource("6_wvi5c")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoSmall/NormalVoid"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="AmmoMedium" type="Node" parent="VBoxContainer"]
+
+[node name="NormalMedium" type="Sprite2D" parent="VBoxContainer/AmmoMedium"]
+position = Vector2(70.165, 91.00001)
+texture = ExtResource("7_jqybt")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoMedium/NormalMedium"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalIce" type="Sprite2D" parent="VBoxContainer/AmmoMedium"]
+position = Vector2(70, 116.00001)
+texture = ExtResource("8_2ynoy")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoMedium/NormalIce"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalToxic" type="Sprite2D" parent="VBoxContainer/AmmoMedium"]
+position = Vector2(70.165, 141)
+texture = ExtResource("9_ajxq5")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoMedium/NormalToxic"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalFire" type="Sprite2D" parent="VBoxContainer/AmmoMedium"]
+position = Vector2(70.16499, 166)
+texture = ExtResource("10_ft3v6")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoMedium/NormalFire"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalVoid" type="Sprite2D" parent="VBoxContainer/AmmoMedium"]
+position = Vector2(70.59885, 190.98018)
+scale = Vector2(1, 1.0003046)
+texture = ExtResource("11_uwccn")
+
+[node name="Label" type="Label" parent="VBoxContainer/AmmoMedium/NormalVoid"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_kongf")
+theme_override_font_sizes/font_size = 10
+text = "X"
