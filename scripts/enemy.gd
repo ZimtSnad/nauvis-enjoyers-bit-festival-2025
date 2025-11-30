@@ -2,6 +2,8 @@ extends Node2D
 
 @export var enemy_type: Enemy_types.Type = Enemy_types.Type.LIGHT
 @export var enemy_mod: Enemy_modifiers.Mod = Enemy_modifiers.Mod.NONE
+@export var texture : Texture2D
+@onready var sprite = $Sprite2D
 
 var health: int
 var damage: int
@@ -20,6 +22,7 @@ var attacking: bool = false
 func _ready() -> void:
 	var base = Enemy_types.BASE_DATA[enemy_type]
 	var mod = Enemy_modifiers.MOD_DATA[enemy_mod]
+	sprite.texture = texture
 
 	health = int(base["health"] * mod["health_mult"])
 	damage = int(base["damage"] * mod["damage_mult"])
