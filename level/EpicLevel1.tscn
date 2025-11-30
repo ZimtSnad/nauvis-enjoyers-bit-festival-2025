@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=4 uid="uid://b6sm8ed66bc18"]
+[gd_scene load_steps=19 format=4 uid="uid://b6sm8ed66bc18"]
 
+[ext_resource type="Script" uid="uid://s0uuvylph86i" path="res://scripts/epic_level_1.gd" id="1_lf26m"]
 [ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_qvcdn"]
-[ext_resource type="Texture2D" uid="uid://evl5kcwens5j" path="res://assets/sprites/Copper.png" id="2_lf26m"]
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="3_xg7oi"]
-[ext_resource type="Texture2D" uid="uid://bip1u1a0l7rnb" path="res://assets/sprites/Iron.png" id="4_8jgv6"]
-[ext_resource type="Texture2D" uid="uid://dqw82jd4jcuc4" path="res://assets/sprites/Bullet_Normal_Small.png" id="5_yiukh"]
+[ext_resource type="Texture2D" uid="uid://drqk2demmwvoh" path="res://assets/Sprites/Iron.png" id="4_8jgv6"]
+[ext_resource type="Texture2D" uid="uid://wyc17gam5cdb" path="res://assets/Sprites/Copper.png" id="5_yiukh"]
 [ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="6_tabh5"]
+[ext_resource type="Texture2D" uid="uid://d2hefuhwr6xa" path="res://assets/Sprites/Bullet_Normal_Small.png" id="6_xg7oi"]
 [ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="7_snf7q"]
 [ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="8_huin1"]
 [ext_resource type="PackedScene" uid="uid://dkwoktkvppq71" path="res://scenes/player.tscn" id="9_yuvmd"]
@@ -14,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="12_0ykyl"]
 [ext_resource type="AudioStream" uid="uid://xjmuwfjxehf6" path="res://assets/audio/bit_fest_music.mp3" id="13_odsyl"]
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="14_siv81"]
-[ext_resource type="Texture2D" uid="uid://c683lsxovcw1p" path="res://assets/sprites/mainTileset.png" id="15_lf26m"]
+[ext_resource type="Texture2D" uid="uid://c683lsxovcw1p" path="res://assets/Sprites/mainTileset.png" id="15_lf26m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xg7oi"]
 texture = ExtResource("15_lf26m")
@@ -349,20 +350,21 @@ texture_region_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_xg7oi")
 
 [node name="ShowcaseLevel" type="Node2D"]
+script = ExtResource("1_lf26m")
 
 [node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_qvcdn")]
 position = Vector2(384, 128)
 beacon_manager = NodePath("../BeaconManager")
-output_material_sprite = ExtResource("2_lf26m")
+output_material_sprite = ExtResource("5_yiukh")
 
 [node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("3_xg7oi")]
 position = Vector2(896, 128)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
-item1_sprite = ExtResource("2_lf26m")
+item1_sprite = ExtResource("5_yiukh")
 item2_sprite = ExtResource("4_8jgv6")
-item_output_sprite = ExtResource("5_yiukh")
+item_output_sprite = ExtResource("6_xg7oi")
 
 [node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_qvcdn")]
 position = Vector2(512, 512)
