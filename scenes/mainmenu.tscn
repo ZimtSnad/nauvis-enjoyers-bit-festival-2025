@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://dt42uo5y1eqxe"]
 
-[ext_resource type="Texture2D" uid="uid://bloc00k6sfajv" path="res://assets/Sprites/MainMenuTailSet.png" id="1_5mbse"]
-[ext_resource type="Texture2D" uid="uid://d3f442ejr7m1w" path="res://assets/Sprites/MenuButton1.png" id="2_r3g3c"]
-[ext_resource type="Texture2D" uid="uid://d1k31hkbme18t" path="res://assets/Sprites/MenuButtonClicked1.png" id="2_s5g8n"]
-[ext_resource type="Script" uid="uid://dpg3ul0iiweib" path="res://scripts/button.gd" id="3_s5g8n"]
-[ext_resource type="FontFile" uid="uid://bbny8ja51xsa1" path="res://assets/fonts/pixel.ttf" id="5_dfy5j"]
-[ext_resource type="AudioStream" uid="uid://dbx6inhcdyyqp" path="res://assets/audio/button.mp3" id="6_dfy5j"]
-[ext_resource type="AudioStream" uid="uid://mops73yfjfb6" path="res://assets/audio/melody.mp3" id="7_85riq"]
+[ext_resource type="Texture2D" uid="uid://benur1uhgx5c3" path="res://assets/Sprites/MainMenuTailSet.png" id="1_5mbse"]
+[ext_resource type="Texture2D" uid="uid://bhrnu3odjbfup" path="res://assets/Sprites/MenuButton1.png" id="2_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://f80blip2pmvv" path="res://assets/Sprites/MenuButtonClicked1.png" id="2_s5g8n"]
+[ext_resource type="Script" uid="uid://dt2rie6bet6as" path="res://scenes/button.gd" id="4_dfy5j"]
+[ext_resource type="FontFile" uid="uid://l7pmcia8s3cj" path="res://assets/fonts/pixel.ttf" id="5_dfy5j"]
+[ext_resource type="AudioStream" uid="uid://cm8bkgpmsaxu2" path="res://assets/audio/button.mp3" id="6_dfy5j"]
+[ext_resource type="AudioStream" uid="uid://dggmh0u6xwk4r" path="res://assets/audio/melody.mp3" id="7_85riq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_natt5"]
 texture = ExtResource("1_5mbse")
@@ -79,7 +79,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_s5g8n")
 text_overrun_behavior = 6
 clip_text = true
 expand_icon = true
-script = ExtResource("3_s5g8n")
+script = ExtResource("4_dfy5j")
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
