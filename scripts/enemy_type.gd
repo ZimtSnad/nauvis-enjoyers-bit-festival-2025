@@ -5,14 +5,14 @@ enum Type { LIGHT, MEDIUM, HEAVY }
 
 const BASE_DATA := {
 	Type.LIGHT: {
-		"health": 70,
+		"health": 30,
 		"damage": 8,
 		"speed": 60.0,
 		"delay_between_bite": 1.5,
 		"attack_range": 90.0
 	},
 	Type.MEDIUM: {
-		"health": 120,
+		"health": 100,
 		"damage": 12,
 		"speed": 40.0,
 		"delay_between_bite": 2.0,

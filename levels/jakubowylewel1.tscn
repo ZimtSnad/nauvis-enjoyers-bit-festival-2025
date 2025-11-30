@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="5_r1jyl"]
 [ext_resource type="PackedScene" uid="uid://nukj5th3ij00" path="res://scenes/turret.tscn" id="6_g1v8u"]
 [ext_resource type="PackedScene" uid="uid://dqfohlwy6k31b" path="res://scenes/bullet.tscn" id="7_r1jyl"]
-[ext_resource type="PackedScene" uid="uid://h63ml1lelyen" path="res://scenes/enemy.tscn" id="7_xp56t"]
+[ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="7_xp56t"]
 [ext_resource type="PackedScene" uid="uid://dkwoktkvppq71" path="res://scenes/player.tscn" id="8_lnw16"]
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="9_mhfvk"]
-[ext_resource type="Texture2D" uid="uid://c683lsxovcw1p" path="res://assets/Sprites/mainTileset.png" id="10_vihcj"]
+[ext_resource type="Texture2D" uid="uid://c683lsxovcw1p" path="res://assets/sprites/mainTileset.png" id="10_vihcj"]
 [ext_resource type="PackedScene" uid="uid://20xylhxx16fd" path="res://scenes/ui.tscn" id="11_qaqsr"]
 [ext_resource type="AudioStream" uid="uid://cofl3w4xuqomy" path="res://assets/audio/2_BitInvader.mp3" id="12_5xgh2"]
 
@@ -366,39 +366,40 @@ beacon_limit = 135
 
 [node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("4_5xgh2")]
 z_index = 10
-position = Vector2(-260, 33)
+position = Vector2(-384, 0)
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("5_r1jyl")]
 z_index = 45
-position = Vector2(-98, 34)
+position = Vector2(-256, 0)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("4_5xgh2")]
 z_index = 10
-position = Vector2(-258, 356)
+position = Vector2(-384, 384)
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("5_r1jyl")]
 z_index = 456
-position = Vector2(61, 357)
+position = Vector2(-128, 384)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
 
 [node name="2to1crafter3" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("5_r1jyl")]
 z_index = 480
-position = Vector2(-99, 354)
+position = Vector2(-256, 384)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 beacon_manager = NodePath("../BeaconManager")
 
-[node name="Turret" parent="." instance=ExtResource("6_g1v8u")]
+[node name="Turret" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("6_g1v8u")]
 z_index = 175
-position = Vector2(257, 203)
+position = Vector2(256, 256)
 bullet_scene = ExtResource("7_r1jyl")
+beacon_manager = NodePath("../BeaconManager")
 
 [node name="Enemy" parent="." instance=ExtResource("7_xp56t")]
 z_index = 20
@@ -416,18 +417,18 @@ grid = NodePath("../GridManager")
 
 [node name="Ammo crate" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_mhfvk")]
 z_index = 100
-position = Vector2(174, -56)
+position = Vector2(128, -128)
 crafter = NodePath("../2to1crafter")
 
 [node name="Ammo crate2" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_mhfvk")]
 z_index = 180
-position = Vector2(49, -56)
+position = Vector2(0, -128)
 crafter = NodePath("../2to1crafter2")
 ammotype = 5
 
 [node name="Ammo crate3" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("9_mhfvk")]
 z_index = 3465
-position = Vector2(175, 41)
+position = Vector2(128, 0)
 crafter = NodePath("../2to1crafter3")
 ammotype = 10
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=4 uid="uid://bdvt53byqgyw3"]
 
 [ext_resource type="Script" uid="uid://c362lr5ro58wu" path="res://scripts/Beacon.gd" id="1_r25yp"]
-[ext_resource type="Texture2D" uid="uid://co2qu2ku6ry2v" path="res://assets/sprites/banka.png" id="2_pa8h1"]
-[ext_resource type="Texture2D" uid="uid://d0rd02q7eoq2m" path="res://assets/sprites/drone.png" id="3_gotfa"]
+[ext_resource type="Texture2D" uid="uid://ccscdc8udeg2f" path="res://assets/sprites/banka.png" id="2_pa8h1"]
+[ext_resource type="Texture2D" uid="uid://bo50pbx4cgk64" path="res://assets/sprites/drone.png" id="3_gotfa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6tmv"]
 texture = ExtResource("2_pa8h1")
@@ -97,6 +97,7 @@ script = ExtResource("1_r25yp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+disabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(32, 32)

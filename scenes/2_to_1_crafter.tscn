@@ -135,6 +135,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("4_ey18k")
 
 [node name="Output" type="Label" parent="gui/Bot cloud"]
+visible = false
 offset_left = 2.0
 offset_top = -12.0
 offset_right = 38.0
@@ -144,8 +145,8 @@ text = "10"
 label_settings = ExtResource("2_rsks8")
 
 [node name="Output sprite" type="Sprite2D" parent="gui/Bot cloud"]
-position = Vector2(-5.9999995, -6.4999995)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1.9073486e-06, -6)
+scale = Vector2(0.42, 0.42)
 
 [node name="Building sprite" type="Sprite2D" parent="."]
 position = Vector2(64, 64)

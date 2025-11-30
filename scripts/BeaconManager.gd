@@ -16,10 +16,10 @@ var time_modfier_matrix := []
 
 func _ready():
 
-	for y in range(grid.grid_size[0]):
+	for y in range(grid.grid_size[1]):
 		var row := []
 		var row2 := []
-		for x in range(grid.grid_size[1]):
+		for x in range(grid.grid_size[0]):
 			row.append(null) 
 			row2.append(0) 
 		beacon_matrix.append(row)
@@ -44,8 +44,8 @@ func get_time_modifier_at_world(pos_world: Vector2) -> float:
 	return time_modfier_matrix[pos_grid.x][pos_grid.y]
 	
 func update_time_modifier_mat():
-	for y in range(grid.grid_size[0]):
-		for x in range(grid.grid_size[1]):
+	for y in range(grid.grid_size[1]):
+		for x in range(grid.grid_size[0]):
 			time_modfier_matrix[x][y] = 0
 		
 	for x in range(grid.grid_size[0]):

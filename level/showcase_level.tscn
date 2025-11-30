@@ -1,0 +1,84 @@
+[gd_scene load_steps=15 format=3 uid="uid://clmnib1xb2v1"]
+
+[ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_sscwr"]
+[ext_resource type="Texture2D" uid="uid://evl5kcwens5j" path="res://assets/sprites/Copper.png" id="2_rblfe"]
+[ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="3_idnq3"]
+[ext_resource type="Texture2D" uid="uid://bip1u1a0l7rnb" path="res://assets/sprites/Iron.png" id="4_l6uqd"]
+[ext_resource type="Texture2D" uid="uid://dqw82jd4jcuc4" path="res://assets/sprites/Bullet_Normal_Small.png" id="5_luom6"]
+[ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="6_nwqmh"]
+[ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="7_12f6e"]
+[ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="8_d7ow2"]
+[ext_resource type="PackedScene" uid="uid://dkwoktkvppq71" path="res://scenes/player.tscn" id="9_5hpoo"]
+[ext_resource type="PackedScene" uid="uid://nukj5th3ij00" path="res://scenes/turret.tscn" id="10_idnq3"]
+[ext_resource type="PackedScene" uid="uid://dqfohlwy6k31b" path="res://scenes/bullet.tscn" id="11_l6uqd"]
+[ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="12_l6uqd"]
+[ext_resource type="AudioStream" uid="uid://xjmuwfjxehf6" path="res://assets/audio/bit_fest_music.mp3" id="13_luom6"]
+[ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="14_nwqmh"]
+
+[node name="ShowcaseLevel" type="Node2D"]
+
+[node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_sscwr")]
+position = Vector2(384, 128)
+beacon_manager = NodePath("../BeaconManager")
+output_material_sprite = ExtResource("2_rblfe")
+
+[node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("3_idnq3")]
+position = Vector2(896, 128)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
+item1_sprite = ExtResource("2_rblfe")
+item2_sprite = ExtResource("4_l6uqd")
+item_output_sprite = ExtResource("5_luom6")
+
+[node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_sscwr")]
+position = Vector2(512, 512)
+beacon_manager = NodePath("../BeaconManager")
+output_material_sprite = ExtResource("4_l6uqd")
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource("6_nwqmh")
+cell_size = Vector2(128, 128)
+grid_size = Vector2(9, 9)
+
+[node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
+script = ExtResource("7_12f6e")
+grid_manager = NodePath("../GridManager")
+
+[node name="BeaconManager" type="Node2D" parent="." node_paths=PackedStringArray("grid")]
+z_index = 2137
+script = ExtResource("8_d7ow2")
+grid = NodePath("../GridManager")
+beacon_limit = 5
+
+[node name="Player" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("9_5hpoo")]
+position = Vector2(256, -256)
+grid = NodePath("../GridManager")
+
+[node name="Turret" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("10_idnq3")]
+position = Vector2(1024, 512)
+delay_between_shots = 0.5
+bullet_scene = ExtResource("11_l6uqd")
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="Enemy" parent="." instance=ExtResource("12_l6uqd")]
+position = Vector2(2176, 512)
+turret_path = NodePath("../Turret")
+
+[node name="Enemy5" parent="." instance=ExtResource("12_l6uqd")]
+position = Vector2(2688, 512)
+turret_path = NodePath("../Turret")
+
+[node name="Enemy6" parent="." instance=ExtResource("12_l6uqd")]
+position = Vector2(2432, 512)
+turret_path = NodePath("../Turret")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_luom6")
+volume_db = 5.359
+autoplay = true
+parameters/looping = true
+
+[node name="Ammo rack" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("14_nwqmh")]
+position = Vector2(896, 384)
+crafter = NodePath("../2to1crafter")
