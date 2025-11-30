@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0fqnnbhs6nil"]
+[gd_scene load_steps=10 format=3 uid="uid://c0fqnnbhs6nil"]
 
 [ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="2_crycw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://nukj5th3ij00" path="res://scenes/armatka.tscn" id="6_pdpul"]
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_crate.tscn" id="7_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="8_045es"]
+[ext_resource type="PackedScene" uid="uid://dqfohlwy6k31b" path="res://scenes/bullet.tscn" id="9_omn1t"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,11 +48,15 @@ second_generator = NodePath("../Generator2")
 
 [node name="Turret" parent="." instance=ExtResource("6_pdpul")]
 position = Vector2(512, 128)
-ammo_store_path = NodePath("../Ammo crate")
+bullet_scene = ExtResource("9_omn1t")
 
 [node name="Ammo crate" parent="." instance=ExtResource("7_8hd6v")]
 position = Vector2(512, 256)
 
 [node name="Enemy" parent="." instance=ExtResource("8_045es")]
-position = Vector2(768, 128)
+position = Vector2(769, 138)
 turret_path = NodePath("../Turret")
+
+[node name="Bullet" parent="." instance=ExtResource("9_omn1t")]
+collision_layer = 4
+collision_mask = 4

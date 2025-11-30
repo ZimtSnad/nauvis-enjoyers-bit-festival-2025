@@ -1,11 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://nukj5th3ij00"]
+[gd_scene load_steps=12 format=3 uid="uid://nukj5th3ij00"]
 
 [ext_resource type="Script" uid="uid://cmug1fy230k5r" path="res://scripts/armatka.gd" id="1_hls62"]
-[ext_resource type="Texture2D" uid="uid://drd5fao185k1h" path="res://assets/sprites/dzialo.png" id="2_xxn75"]
+[ext_resource type="Texture2D" uid="uid://r13xuyr111j" path="res://assets/sprites/TurretAnimation.png" id="2_xxn75"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxn75"]
 radius = 18.0
 height = 220.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxiwq"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gesd5"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm31d"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiwqo"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbo57"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbni8"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roe8f"]
+atlas = ExtResource("2_xxn75")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_42cqo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxiwq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gesd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm31d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiwqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbo57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbni8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roe8f")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 20.0
+}]
 
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_hls62")
@@ -30,10 +92,11 @@ shape = SubResource("CapsuleShape2D_xxn75")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, 16)
-texture = ExtResource("2_xxn75")
-flip_h = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18.5, 18.5)
+scale = Vector2(1.09375, 1.09375)
+sprite_frames = SubResource("SpriteFrames_42cqo")
+animation = &"idle"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

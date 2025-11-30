@@ -80,3 +80,13 @@ func attack_turret() -> void:
 		await timer.timeout
 
 	attacking = false
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	print("enemy took dmg:", amount, "hp:", health)
+	if health <= 0:
+		die()
+
+
+func die() -> void:
+	queue_free()
