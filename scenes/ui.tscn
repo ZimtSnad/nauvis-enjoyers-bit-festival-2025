@@ -1,0 +1,216 @@
+[gd_scene load_steps=15 format=3 uid="uid://20xylhxx16fd"]
+
+[ext_resource type="Texture2D" uid="uid://w0cajnb5xjhs" path="res://assets/Sprites/MainMenuTailSet.png" id="1_6rmj2"]
+[ext_resource type="FontFile" uid="uid://chlny0f8undvs" path="res://assets/fonts/pixel.ttf" id="2_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://wtux7fkxron3" path="res://assets/Sprites/Bullet_Normal_Small.png" id="3_qsv74"]
+[ext_resource type="Texture2D" uid="uid://vg4lxdoyabeb" path="res://assets/Sprites/Bullet_Normal_Ice.png" id="4_h1mc3"]
+[ext_resource type="Texture2D" uid="uid://c6i525hfhdemc" path="res://assets/Sprites/Bullet_Normal_Toxic.png" id="5_cof4p"]
+[ext_resource type="Texture2D" uid="uid://bws42dionuv16" path="res://assets/Sprites/Bullet_Normal_Fire.png" id="6_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://blfxmldwa3deo" path="res://assets/Sprites/Bullet_Normal_Void.png" id="7_8k7j3"]
+[ext_resource type="Texture2D" uid="uid://dbiao2isa6mv8" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="8_jkdwc"]
+[ext_resource type="Texture2D" uid="uid://dyu25kti7f2d8" path="res://assets/Sprites/Bullet_Medium_Ice.png" id="9_rlppe"]
+[ext_resource type="Texture2D" uid="uid://cbexd4sfy1gqg" path="res://assets/Sprites/Bullet_Medium_Toxic.png" id="10_ycmcx"]
+[ext_resource type="Texture2D" uid="uid://uq2ixb0fenfi" path="res://assets/Sprites/Bullet_Medium_Fire.png" id="11_kupmu"]
+[ext_resource type="Texture2D" uid="uid://bv5xvld3gpht0" path="res://assets/Sprites/Bullet_Medium_Void.png" id="12_catpy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41akx"]
+texture = ExtResource("1_6rmj2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sesyt"]
+sources/0 = SubResource("TileSetAtlasSource_41akx")
+
+[node name="UI" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(33, 16)
+tile_set = SubResource("TileSet_sesyt")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 131072, 0, -65534, 0, 1, -65536, 131072, 1, -65535, 196608, 2, 65535, 196608, 0, 131071, 131072, 2, 196607, 327680, 3, 262143, 0, 2, 327679, 327680, 1, 393215, 196608, 0, 458751, 0, 1, 393218, 0, 2, 327682, 0, 0, 262146, 0, 0, 196610, 327680, 1, 131074, 196608, 3, 65538, 65536, 1, 2, 0, 1, 393216, 327680, 1, 393217, 0, 3, 327680, 196608, 3, 262144, 327680, 3, 327681, 131072, 2, 262145, 131072, 1, 196608, 0, 1, 196609, 262144, 3, 131072, 0, 0, 131073, 196608, 0, 65536, 327680, 0, 65537, 0, 3, 0, 327680, 3, 1, 0, 1, 393219, 262144, 0, -65533, 65536, 0, 3, 0, 1, 65539, 196608, 0, 131075, 65536, 1, 196611, 196608, 2, 262147, 65536, 2, 327683, 0, 0, 524287, 131072, 1, 589823, 0, 2, 524288, 65536, 2, 524289, 131072, 2, 524290, 196608, 2, 524291, 327680, 1, 458755, 0, 0, 458754, 196608, 3, 458752, 327680, 2, 458753, 0, 3, 655359, 0, 0, 589827, 327680, 0, 589824, 0, 0, 589825, 65536, 1, 589826, 262144, 3, 720895, 0, 1, 655360, 65536, 1, 655361, 131072, 1, 655362, 327680, 1, 655363, 327680, 3, 720899, 65536, 3, 786431, 262144, 1, 720896, 0, 0, 720897, 65536, 1, 720898, 0, 2)
+
+[node name="NextWave" type="Label" parent="."]
+offset_left = 23.0
+offset_right = 92.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "Next wave"
+
+[node name="Resources" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 63.0
+offset_right = 116.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "Ammo"
+
+[node name="AmmoSmall" type="Node" parent="."]
+
+[node name="NormalSmall" type="Sprite2D" parent="AmmoSmall"]
+position = Vector2(29, 98)
+texture = ExtResource("3_qsv74")
+
+[node name="Label" type="Label" parent="AmmoSmall/NormalSmall"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalIce" type="Sprite2D" parent="AmmoSmall"]
+position = Vector2(29, 124)
+texture = ExtResource("4_h1mc3")
+
+[node name="Label" type="Label" parent="AmmoSmall/NormalIce"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalToxic" type="Sprite2D" parent="AmmoSmall"]
+position = Vector2(29, 149)
+texture = ExtResource("5_cof4p")
+
+[node name="Label" type="Label" parent="AmmoSmall/NormalToxic"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalFire" type="Sprite2D" parent="AmmoSmall"]
+position = Vector2(29, 174)
+texture = ExtResource("6_f7tlh")
+
+[node name="Label" type="Label" parent="AmmoSmall/NormalFire"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="NormalVoid" type="Sprite2D" parent="AmmoSmall"]
+position = Vector2(29, 199)
+texture = ExtResource("7_8k7j3")
+
+[node name="Label" type="Label" parent="AmmoSmall/NormalVoid"]
+offset_left = 7.0
+offset_top = -10.0
+offset_right = 47.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "x"
+
+[node name="AmmoMedium" type="Node" parent="."]
+
+[node name="NormalMedium" type="Sprite2D" parent="AmmoMedium"]
+position = Vector2(70.165, 91.00001)
+texture = ExtResource("8_jkdwc")
+
+[node name="Label" type="Label" parent="AmmoMedium/NormalMedium"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalIce" type="Sprite2D" parent="AmmoMedium"]
+position = Vector2(70, 116.00001)
+texture = ExtResource("9_rlppe")
+
+[node name="Label" type="Label" parent="AmmoMedium/NormalIce"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalToxic" type="Sprite2D" parent="AmmoMedium"]
+position = Vector2(70.165, 141)
+texture = ExtResource("10_ycmcx")
+
+[node name="Label" type="Label" parent="AmmoMedium/NormalToxic"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalFire" type="Sprite2D" parent="AmmoMedium"]
+position = Vector2(70.16499, 166)
+texture = ExtResource("11_kupmu")
+
+[node name="Label" type="Label" parent="AmmoMedium/NormalFire"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "X"
+
+[node name="NormalVoid" type="Sprite2D" parent="AmmoMedium"]
+position = Vector2(70.59885, 190.98018)
+scale = Vector2(1, 1.0003046)
+texture = ExtResource("12_catpy")
+
+[node name="Label" type="Label" parent="AmmoMedium/NormalVoid"]
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 46.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("2_vsj0x")
+theme_override_font_sizes/font_size = 10
+text = "X"

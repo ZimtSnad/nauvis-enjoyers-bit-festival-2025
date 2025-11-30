@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg1d0b3cma3vm"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_yqv6u"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_3iwyn"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_rhxii"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_dfkii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4s0w6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.00013033328, 0.0001226544, 0.00019188868, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owylc"]
+bg_color = Color(0.78039217, 0.13333334, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nw5y4"]
+bg_color = Color(0.9122706, 0.37771794, 0.6653689, 1)
+
+[node name="HSlider" type="HSlider"]
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 136.0
+offset_bottom = 23.0
+theme_override_icons/grabber = SubResource("ImageTexture_yqv6u")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_3iwyn")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_rhxii")
+theme_override_icons/tick = SubResource("ImageTexture_dfkii")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4s0w6")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_owylc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_nw5y4")
+value = 19.0
+editable = false
+scrollable = false
