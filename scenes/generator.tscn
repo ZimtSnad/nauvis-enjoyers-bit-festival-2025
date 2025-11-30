@@ -5,7 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="3_ef8yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yxne"]
-size = Vector2(120, 120)
+size = Vector2(112, 112)
 
 [node name="Generator" type="Area2D"]
 script = ExtResource("1_w5vnv")
