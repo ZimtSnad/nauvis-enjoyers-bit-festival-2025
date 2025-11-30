@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://bba5ltuadarx7"]
+[gd_scene load_steps=21 format=4 uid="uid://bba5ltuadarx7"]
 
 [ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_fvxfm"]
-[ext_resource type="Texture2D" uid="uid://q0pxb1yhji2j" path="res://assets/sprites/Copper.png" id="2_y53g1"]
+[ext_resource type="Script" uid="uid://bu3552b5ankdo" path="res://scripts/epic_level_2.gd" id="1_ummr2"]
+[ext_resource type="Texture2D" uid="uid://wyc17gam5cdb" path="res://assets/Sprites/Copper.png" id="2_y53g1"]
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="3_7bf6d"]
-[ext_resource type="Texture2D" uid="uid://bovt5hsus0mfb" path="res://assets/sprites/Iron.png" id="4_ummr2"]
-[ext_resource type="Texture2D" uid="uid://ci7qai8pcgw83" path="res://assets/sprites/Bullet_Normal_Small.png" id="5_7io0v"]
+[ext_resource type="Texture2D" uid="uid://drqk2demmwvoh" path="res://assets/Sprites/Iron.png" id="4_ummr2"]
+[ext_resource type="Texture2D" uid="uid://c0c6730fmcptu" path="res://assets/sprites/bullet/LIGHT_NONE_BULLET.png" id="5_7io0v"]
 [ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="6_6uwqw"]
 [ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="7_8k622"]
 [ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="8_xxm73"]
@@ -15,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://xjmuwfjxehf6" path="res://assets/audio/bit_fest_music.mp3" id="13_cfdbn"]
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="14_w1fto"]
 [ext_resource type="Texture2D" uid="uid://c683lsxovcw1p" path="res://assets/Sprites/mainTileset.png" id="15_ummaw"]
-[ext_resource type="Texture2D" uid="uid://b7q5fhr1smgg8" path="res://assets/Sprites/gold.png" id="15_y53g1"]
-[ext_resource type="Texture2D" uid="uid://c2wa1w0nhwksh" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="16_7bf6d"]
+[ext_resource type="Texture2D" uid="uid://bjblhyhv2l2ng" path="res://assets/Sprites/gold.png" id="15_y53g1"]
+[ext_resource type="Texture2D" uid="uid://bhaxi44qkhlo3" path="res://assets/Sprites/Bullet_Medium_Normal.png" id="16_7bf6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bf6d"]
 texture = ExtResource("15_ummaw")
@@ -369,6 +370,7 @@ texture_region_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_7bf6d")
 
 [node name="ShowcaseLevel" type="Node2D"]
+script = ExtResource("1_ummr2")
 
 [node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_fvxfm")]
 position = Vector2(387, 2)
