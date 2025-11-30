@@ -12,6 +12,7 @@ extends Node2D
 @onready var output_label = $"gui/Bot cloud/Output"
 @onready var timer = $Timer
 @onready var building_animator = $"Building animation"
+@onready var progress_bar = $"Building sprite/HSlider"
 
 var first_counter = 0
 var second_counter = 0
@@ -40,6 +41,14 @@ func can_craft():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if not timer.is_stopped():
+		print(timer)
+		progress_bar.value = ((timer.wait_time - timer.time_left) / timer.wait_time) * 100.0
+	else:
+		progress_bar.value = 0
+	
+	
 	first_label.text = str(first_counter)
 	second_label.text = str(second_counter)
 	output_label.text = str(output_counter)

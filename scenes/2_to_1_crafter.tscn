@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://56yqfxdkyu6l"]
+[gd_scene load_steps=14 format=3 uid="uid://56yqfxdkyu6l"]
 
 [ext_resource type="Texture2D" uid="uid://codvli7pguf0a" path="res://assets/sprites/factory2.png" id="1_ce2oh"]
 [ext_resource type="Script" uid="uid://b4136hexwjn20" path="res://scripts/2_to_1_crafter.gd" id="1_vklko"]
 [ext_resource type="Texture2D" uid="uid://bt2pkyiwgwf06" path="res://assets/GUI/Input_materials_gui_double.png" id="2_lmwtn"]
 [ext_resource type="LabelSettings" uid="uid://dnub4tguh08yg" path="res://assets/fonts/pixel font.tres" id="2_rsks8"]
 [ext_resource type="Texture2D" uid="uid://drhk4fxj0yhkk" path="res://assets/GUI/Input_materials_gui_single.png" id="4_ey18k"]
+[ext_resource type="PackedScene" uid="uid://bg1d0b3cma3vm" path="res://scenes/Slider.tscn" id="6_2mplf"]
 [ext_resource type="Animation" uid="uid://daafy611dx51i" path="res://assets/player animations/building_squash_stretch.res" id="6_ey18k"]
 
 [sub_resource type="Animation" id="Animation_6ghrt"]
@@ -54,6 +55,21 @@ _data = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ey18k"]
 
+[sub_resource type="Animation" id="Animation_ey18k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_lmwtn"]
 resource_name = "text_hover"
 loop_mode = 1
@@ -68,21 +84,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 2.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ey18k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gui:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2mplf"]
@@ -138,6 +139,13 @@ label_settings = ExtResource("2_rsks8")
 position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ce2oh")
+
+[node name="HSlider" parent="Building sprite" instance=ExtResource("6_2mplf")]
+offset_left = -12.0
+offset_top = 10.75
+offset_right = 76.0
+offset_bottom = 23.75
+scale = Vector2(0.25, 0.25)
 
 [node name="Resource sprite" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
