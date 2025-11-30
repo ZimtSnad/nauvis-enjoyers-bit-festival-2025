@@ -11,15 +11,17 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Generator" parent="." instance=ExtResource("1_lquwl")]
+[node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_lquwl")]
+beacon_manager = NodePath("../BeaconManager")
 
 [node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator") instance=ExtResource("2_7mycd")]
 position = Vector2(320, 64)
 first_generator = NodePath("../Generator")
 second_generator = NodePath("../Generator2")
 
-[node name="Generator2" parent="." instance=ExtResource("1_lquwl")]
-position = Vector2(64, 320)
+[node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("1_lquwl")]
+position = Vector2(128, 384)
+beacon_manager = NodePath("../BeaconManager")
 
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource("3_272bh")
