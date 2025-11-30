@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var delay_between_shots := 2.0
+@export var delay_between_shots := 1.0
 @export var damage := 10
 @export var health := 1000
 @export var bullet_scene: PackedScene
@@ -11,6 +11,8 @@ extends Node2D
 
 @onready var Audio_Stream = $AudioStreamPlayer
 @onready var reload = $reload
+@export var beacon_manager: Node2D
+
 
 var current_enemy: Node2D = null
 var shooting: bool = false
@@ -21,6 +23,15 @@ func _ready() -> void:
 	timer.wait_time = delay_between_shots
 
 func _process(delta: float) -> void:
+	var beacon_time_multipier = beacon_manager.get_time_modifier_at_world(self.position)
+	if beacon_time_multipier == 0 and not timer.is_stopped():
+		timer.stop()
+	elif beacon_time_multipier != 0 and timer.is_stopped():
+		timer.wait_time = (1 / beacon_time_multipier) * delay_between_shots
+		timer.start()
+	elif beacon_time_multipier != 0 :
+		timer.wait_time = (1 / beacon_time_multipier) * delay_between_shots
+		
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -38,7 +49,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	shoot_at_enemy(body)
+	if body != null:
+		shoot_at_enemy(body)
 	# Nie musimy tu nic robić, obsługujemy timeout przez `await`
 	pass
 
@@ -47,7 +59,7 @@ func shoot_at_enemy(body: Node) -> void:
 	var enemy := current_enemy
 
 	# upewniamy się, że wróg ma potrzebne zmienne
-	if not ("enemy_type" in enemy) or not ("enemy_mod" in enemy):
+	if enemy == null or (not ("enemy_type" in enemy) or not ("enemy_mod" in enemy)):
 		print("Enemy nie ma enemy_type / enemy_mod")
 		return
 
