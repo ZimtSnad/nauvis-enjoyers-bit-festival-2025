@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://dag6yi0fla7gr"]
+
+[ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="1_nokfs"]
+[ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="2_jfgjb"]
+[ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_rack.tscn" id="3_l1g64"]
+[ext_resource type="PackedScene" uid="uid://nukj5th3ij00" path="res://scenes/turret.tscn" id="4_vb5hv"]
+[ext_resource type="Script" uid="uid://deb0ftu6wifoa" path="res://scripts/GridManager.gd" id="5_vb5hv"]
+[ext_resource type="Script" uid="uid://chytpah4f07qp" path="res://scripts/GridDrawer.gd" id="6_vndax"]
+[ext_resource type="Script" uid="uid://g5vwv3yvhb5w" path="res://scripts/BeaconManager.gd" id="7_k4ctk"]
+[ext_resource type="PackedScene" uid="uid://dkwoktkvppq71" path="res://scenes/player.tscn" id="8_vndax"]
+[ext_resource type="PackedScene" uid="uid://h63ml1lelyen" path="res://scenes/enemy.tscn" id="9_k4ctk"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="2to1crafter" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("1_nokfs")]
+position = Vector2(384, 0)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="2to1crafter2" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("1_nokfs")]
+position = Vector2(512, 256)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="2to1crafter3" parent="." node_paths=PackedStringArray("first_generator", "second_generator", "beacon_manager") instance=ExtResource("1_nokfs")]
+position = Vector2(384, 512)
+first_generator = NodePath("../Generator")
+second_generator = NodePath("../Generator2")
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="Generator" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("2_jfgjb")]
+position = Vector2(0, 128)
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="Generator2" parent="." node_paths=PackedStringArray("beacon_manager") instance=ExtResource("2_jfgjb")]
+position = Vector2(0, 384)
+beacon_manager = NodePath("../BeaconManager")
+
+[node name="Ammo rack" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("3_l1g64")]
+position = Vector2(512, 0)
+crafter = NodePath("../2to1crafter")
+
+[node name="Ammo rack2" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("3_l1g64")]
+position = Vector2(640, 256)
+crafter = NodePath("../2to1crafter2")
+ammotype = 5
+
+[node name="Ammo rack3" parent="." node_paths=PackedStringArray("crafter") instance=ExtResource("3_l1g64")]
+position = Vector2(512, 512)
+crafter = NodePath("../2to1crafter3")
+ammotype = 10
+
+[node name="Turret" parent="." instance=ExtResource("4_vb5hv")]
+position = Vector2(896, 0)
+
+[node name="Turret2" parent="." instance=ExtResource("4_vb5hv")]
+position = Vector2(896, 384)
+
+[node name="Turret3" parent="." instance=ExtResource("4_vb5hv")]
+position = Vector2(896, 640)
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource("5_vb5hv")
+cell_size = Vector2(128, 128)
+grid_size = Vector2(8, 8)
+
+[node name="GridDrawer" type="Node2D" parent="." node_paths=PackedStringArray("grid_manager")]
+script = ExtResource("6_vndax")
+grid_manager = NodePath("../GridManager")
+
+[node name="BeaconManager" type="Node2D" parent="." node_paths=PackedStringArray("grid")]
+script = ExtResource("7_k4ctk")
+grid = NodePath("../GridManager")
+beacon_limit = 5
+
+[node name="Player" parent="." node_paths=PackedStringArray("grid") instance=ExtResource("8_vndax")]
+position = Vector2(768, 384)
+grid = NodePath("../GridManager")
+
+[node name="Enemy" parent="." instance=ExtResource("9_k4ctk")]
+position = Vector2(1280, 0)
+turret_path = NodePath("../Turret")
