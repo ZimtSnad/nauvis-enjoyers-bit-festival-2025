@@ -4,10 +4,13 @@
 .nomedia
 
 # Godot-specific ignores
+.import/
 *.import/
 .import
+*.import
 export.cfg
 export_credentials.cfg
+
 
 # Mono-specific ignores
 # The .mono folder contains generated files for C# projects.
