@@ -16,10 +16,14 @@ var attack_range: float
 
 @onready var AnimatedSprite = $AnimatedSprite2D
 
+@onready var BOOM = $BOOM
+@onready var RUN = $RUN
+
 var attacking: bool = false
 
 
 func _ready() -> void:
+	RUN.play()
 	AnimatedSprite.play("loop_L_N")
 	var base = Enemy_types.BASE_DATA[enemy_type]
 	var mod = Enemy_modifiers.MOD_DATA[enemy_mod]
@@ -89,6 +93,8 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("enemy took dmg:", amount, "hp:", health)
 	if health <= 0:
+		RUN.stop()
+		BOOM.play()
 		AnimatedSprite.play("BOOM")
 
 

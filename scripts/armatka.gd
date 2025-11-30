@@ -10,6 +10,9 @@ extends Node2D
 
 @onready var AnimatedSprite = $AnimatedSprite2D
 
+@onready var Audio_Stream = $AudioStreamPlayer
+@onready var reload = $reload
+
 var current_enemy: Node2D = null
 var shooting: bool = false
 
@@ -68,6 +71,7 @@ func shoot_at_enemy(body: Node) -> void:
 		print("Strzelam ammo:", ammo_type, " pozostało:", AmmoStore.get_amount(ammo_type))
 
 		# start animation
+		Audio_Stream.play()
 		AnimatedSprite.play("shoot")
 
 		if bullet_scene == null:
@@ -103,6 +107,7 @@ func shoot_at_enemy(body: Node) -> void:
 		# czekamy na kolejny strzał
 		timer.start()
 		await timer.timeout
+		#reload.play()
 
 	shooting = false
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0fqnnbhs6nil"]
+[gd_scene load_steps=11 format=3 uid="uid://c0fqnnbhs6nil"]
 
 [ext_resource type="PackedScene" uid="uid://c434tec7m0enm" path="res://scenes/generator.tscn" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://56yqfxdkyu6l" path="res://scenes/2_to_1_crafter.tscn" id="2_crycw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://coqkswiy4vco4" path="res://scenes/ammo_crate.tscn" id="7_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://cpks4hdyftaab" path="res://scenes/enemy.tscn" id="8_045es"]
 [ext_resource type="PackedScene" uid="uid://dqfohlwy6k31b" path="res://scenes/bullet.tscn" id="9_omn1t"]
+[ext_resource type="AudioStream" uid="uid://cnb2uaet37g5r" path="res://assets/audio/music.mp3" id="10_lf3p4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -58,3 +59,9 @@ position = Vector2(512, 256)
 [node name="Enemy" parent="." instance=ExtResource("8_045es")]
 position = Vector2(769, 138)
 turret_path = NodePath("../Turret")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_lf3p4")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true

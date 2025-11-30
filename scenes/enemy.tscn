@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cpks4hdyftaab"]
+[gd_scene load_steps=44 format=3 uid="uid://cpks4hdyftaab"]
 
 [ext_resource type="Script" uid="uid://dl7nrmowcw11i" path="res://scripts/enemy.gd" id="1_7p1mj"]
 [ext_resource type="Texture2D" uid="uid://bldjx8wpotp7h" path="res://assets/sprites/Boom/Boom1.png" id="2_2tuss"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://cx2vhtsw782f0" path="res://assets/sprites/Enemy/medium/Toxic/MediumToxic2.png" id="37_4ceth"]
 [ext_resource type="Texture2D" uid="uid://cnya8mi40uqx3" path="res://assets/sprites/Enemy/medium/Void/MediumVoid1.png" id="38_djthp"]
 [ext_resource type="Texture2D" uid="uid://dh2qkoepntwrl" path="res://assets/sprites/Enemy/medium/Void/MediumVoid2.png" id="39_whoqb"]
+[ext_resource type="AudioStream" uid="uid://gfbbtvmcy5ns" path="res://assets/audio/explosion_2.mp3" id="40_vab5u"]
+[ext_resource type="AudioStream" uid="uid://7wv2gu6ym35u" path="res://assets/audio/car.mp3" id="41_qiusc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 
@@ -231,5 +233,15 @@ position = Vector2(9, 9.5)
 scale = Vector2(0.5625, 0.59375)
 sprite_frames = SubResource("SpriteFrames_4akdl")
 animation = &"BOOM"
+
+[node name="BOOM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_vab5u")
+volume_db = -10.49
+
+[node name="RUN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_qiusc")
+volume_db = -10.018
+autoplay = true
+parameters/looping = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://nukj5th3ij00"]
+[gd_scene load_steps=14 format=3 uid="uid://nukj5th3ij00"]
 
 [ext_resource type="Script" uid="uid://cmug1fy230k5r" path="res://scripts/armatka.gd" id="1_hls62"]
 [ext_resource type="Texture2D" uid="uid://r13xuyr111j" path="res://assets/sprites/TurretAnimation.png" id="2_xxn75"]
+[ext_resource type="AudioStream" uid="uid://joy2i4ju54pf" path="res://assets/audio/gun.wav" id="3_cxiwq"]
+[ext_resource type="AudioStream" uid="uid://vp5kj56q2ke6" path="res://assets/audio/reload.mp3" id="4_gesd5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxn75"]
 radius = 18.0
@@ -100,6 +102,14 @@ position = Vector2(18.5, 18.5)
 scale = Vector2(1.09375, 1.09375)
 sprite_frames = SubResource("SpriteFrames_42cqo")
 animation = &"shoot"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cxiwq")
+volume_db = -5.048
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gesd5")
+volume_db = -16.22
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
