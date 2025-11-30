@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://nukj5th3ij00"]
+
+[ext_resource type="Script" uid="uid://cmug1fy230k5r" path="res://scripts/turret.gd" id="1_hls62"]
+[ext_resource type="Texture2D" uid="uid://drd5fao185k1h" path="res://assets/sprites/dzialo.png" id="2_xxn75"]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_hls62")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("2_xxn75")
+flip_h = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 64)
+target_position = Vector2(368, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
